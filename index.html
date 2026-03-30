@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>生日蛋糕定制 | 精选蛋糕展示</title>
+    <title>天使蛋糕 | 定制生日蛋糕</title>
     <style>
         * {
             margin: 0;
@@ -26,7 +26,6 @@
             line-height: 1.6;
         }
 
-        /* Header */
         header {
             background: var(--white);
             padding: 1rem 2rem;
@@ -61,7 +60,6 @@
             color: var(--primary);
         }
 
-        /* Hero */
         .hero {
             text-align: center;
             padding: 4rem 2rem;
@@ -81,25 +79,7 @@
             margin: 0 auto 2rem;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: var(--primary);
-            color: var(--white);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(232, 180, 184, 0.4);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(232, 180, 184, 0.6);
-        }
-
-        /* Gallery */
-        .gallery {
+        .section {
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
@@ -121,6 +101,77 @@
             margin: 1rem auto 0;
         }
 
+        /* 原料展示 */
+        .ingredients {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .ingredient-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(232, 180, 184, 0.15);
+        }
+
+        .ingredient-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .ingredient-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .ingredient-desc {
+            color: #8a7a7a;
+            font-size: 0.9rem;
+        }
+
+        /* 尺寸选择 */
+        .size-options {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .size-card {
+            background: var(--white);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(232, 180, 184, 0.15);
+            min-width: 120px;
+        }
+
+        .size-card.active {
+            border: 3px solid var(--primary);
+        }
+
+        .size-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .size-desc {
+            color: #8a7a7a;
+            font-size: 0.85rem;
+        }
+
+        .size-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+
+        /* 蛋糕画廊 */
         .cake-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -137,7 +188,6 @@
 
         .cake-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(232, 180, 184, 0.3);
         }
 
         .cake-image {
@@ -172,29 +222,36 @@
             font-weight: bold;
         }
 
-        .select-btn {
-            display: block;
-            width: 100%;
-            padding: 0.8rem;
-            margin-top: 1rem;
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            border-radius: 10px;
+        /* 口味选择 */
+        .flavor-options {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .flavor-tag {
+            background: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            border: 2px solid var(--secondary);
             cursor: pointer;
-            font-size: 1rem;
             transition: all 0.3s;
         }
 
-        .select-btn:hover {
+        .flavor-tag:hover,
+        .flavor-tag.active {
+            border-color: var(--primary);
             background: var(--primary);
             color: var(--white);
         }
 
-        /* Contact */
+        /* 联系方式 */
         .contact {
             background: var(--white);
             padding: 4rem 2rem;
+            text-align: center;
         }
 
         .contact-content {
@@ -202,113 +259,30 @@
             margin: 0 auto;
         }
 
-        .contact-form {
+        .wechat-qr {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--secondary);
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .qr-placeholder {
+            width: 150px;
+            height: 150px;
+            background: #fff;
             display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form select {
-            padding: 1rem;
-            border: 2px solid var(--secondary);
+            align-items: center;
+            justify-content: center;
             border-radius: 10px;
-            font-size: 1rem;
-            font-family: inherit;
+            color: #8a7a7a;
         }
 
-        .contact-form input:focus,
-        .contact-form textarea:focus,
-        .contact-form select:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .contact-form button {
-            padding: 1rem;
-            background: var(--primary);
-            color: var(--white);
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .contact-form button:hover {
-            background: #d9a0a5;
-        }
-
-        /* Footer */
         footer {
             background: var(--text);
             color: var(--white);
             text-align: center;
             padding: 2rem;
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 20px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #8a7a7a;
-        }
-
-        .selected-cakes {
-            margin: 1rem 0;
-            padding: 1rem;
-            background: var(--secondary);
-            border-radius: 10px;
-        }
-
-        .selected-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--primary);
-        }
-
-        /* WeChat QR placeholder */
-        .wechat-qr {
-            text-align: center;
-            margin-top: 2rem;
-            padding: 2rem;
-            background: var(--secondary);
-            border-radius: 15px;
-        }
-
-        .wechat-qr p {
-            margin-bottom: 1rem;
         }
 
         @media (max-width: 768px) {
@@ -324,15 +298,26 @@
             nav a {
                 margin: 0 1rem;
             }
+            
+            .size-options {
+                gap: 1rem;
+            }
+            
+            .size-card {
+                min-width: 100px;
+                padding: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <div class="logo">🎂 甜蜜蛋糕</div>
+            <div class="logo">👼 天使蛋糕</div>
             <nav>
-                <a href="#gallery">蛋糕展示</a>
+                <a href="#ingredients">原料</a>
+                <a href="#sizes">尺寸</a>
+                <a href="#gallery">蛋糕</a>
                 <a href="#contact">联系我们</a>
             </nav>
         </div>
@@ -340,184 +325,160 @@
 
     <section class="hero">
         <h1>定制专属生日蛋糕</h1>
-        <p>精选食材，匠心制作<br>让每一口都成为甜蜜回忆</p>
-        <a href="#gallery" class="cta-button">开始选蛋糕</a>
+        <p>精选食材 · 匠心制作 · 甜蜜每一刻</p>
     </section>
 
-    <section id="gallery" class="gallery">
-        <h2 class="section-title">蛋糕展示</h2>
-        <div class="cake-grid" id="cakeGrid">
-            <!-- 蛋糕卡片将通过JS动态生成 -->
+    <!-- 原料介绍 -->
+    <section id="ingredients" class="section">
+        <h2 class="section-title">优质原料</h2>
+        <div class="ingredients">
+            <div class="ingredient-card">
+                <div class="ingredient-icon">🥛</div>
+                <div class="ingredient-name">动物奶油</div>
+                <div class="ingredient-desc">安佳动物奶油，天然健康，入口细腻</div>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-icon">🥚</div>
+                <div class="ingredient-name">新鲜鸡蛋</div>
+                <div class="ingredient-desc">农家新鲜鸡蛋，营养丰富，色泽金黄</div>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-icon">🌾</div>
+                <div class="ingredient-name">精选面粉</div>
+                <div class="ingredient-desc">日式面粉，筋道柔软，口感细腻</div>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-icon">🍫</div>
+                <div class="ingredient-name">可可脂巧克力</div>
+                <div class="ingredient-desc">法芙娜巧克力，浓郁丝滑，苦中带甜</div>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-icon">🍓</div>
+                <div class="ingredient-name">新鲜水果</div>
+                <div class="ingredient-desc">当日采购新鲜水果，颗颗饱满</div>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-icon">🥜</div>
+                <div class="ingredient-name">天然坚果</div>
+                <div class="ingredient-desc">进口坚果，香脆可口，增添风味</div>
+            </div>
         </div>
     </section>
 
+    <!-- 尺寸选择 -->
+    <section id="sizes" class="section" style="background: var(--white);">
+        <h2 class="section-title">尺寸选择</h2>
+        <div class="size-options">
+            <div class="size-card">
+                <div class="size-name">6寸</div>
+                <div class="size-desc">1-2人食用</div>
+                <div class="size-price">¥188起</div>
+            </div>
+            <div class="size-card">
+                <div class="size-name">8寸</div>
+                <div class="size-desc">3-5人食用</div>
+                <div class="size-price">¥268起</div>
+            </div>
+            <div class="size-card">
+                <div class="size-name">10寸</div>
+                <div class="size-desc">6-8人食用</div>
+                <div class="size-price">¥368起</div>
+            </div>
+            <div class="size-card">
+                <div class="size-name">12寸</div>
+                <div class="size-desc">10-12人食用</div>
+                <div class="size-price">¥468起</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 口味选择 -->
+    <section class="section">
+        <h2 class="section-title">可选口味</h2>
+        <div class="flavor-options">
+            <div class="flavor-tag">原味奶油</div>
+            <div class="flavor-tag">草莓</div>
+            <div class="flavor-tag">巧克力</div>
+            <div class="flavor-tag">抹茶</div>
+            <div class="flavor-tag">芝士</div>
+            <div class="flavor-tag">芒果</div>
+            <div class="flavor-tag">榴莲</div>
+            <div class="flavor-tag">蓝莓</div>
+        </div>
+    </section>
+
+    <!-- 蛋糕展示 -->
+    <section id="gallery" class="section" style="background: var(--white);">
+        <h2 class="section-title">蛋糕展示</h2>
+        <div class="cake-grid">
+            <div class="cake-card">
+                <div class="cake-image">🎂</div>
+                <div class="cake-info">
+                    <div class="cake-name">经典奶油蛋糕</div>
+                    <div class="cake-desc">新鲜奶油 + 水果夹心，简约经典</div>
+                    <div class="cake-price">¥188起</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍫</div>
+                <div class="cake-info">
+                    <div class="cake-name">巧克力慕斯</div>
+                    <div class="cake-desc">法芙娜巧克力，浓郁丝滑</div>
+                    <div class="cake-price">¥228起</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍓</div>
+                <div class="cake-info">
+                    <div class="cake-name">草莓鲜奶蛋糕</div>
+                    <div class="cake-desc">新鲜草莓点缀，酸甜可口</div>
+                    <div class="cake-price">¥218起</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🧀</div>
+                <div class="cake-info">
+                    <div class="cake-name">芝士熔岩蛋糕</div>
+                    <div class="cake-desc">浓郁芝士内陷，入口即化</div>
+                    <div class="cake-price">¥258起</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍵</div>
+                <div class="cake-info">
+                    <div class="cake-name">抹茶红豆蛋糕</div>
+                    <div class="cake-desc">日式抹茶风味，清新回甘</div>
+                    <div class="cake-price">¥238起</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🥭</div>
+                <div class="cake-info">
+                    <div class="cake-name">水果派对蛋糕</div>
+                    <div class="cake-desc">多种新鲜水果，缤纷美味</div>
+                    <div class="cake-price">¥268起</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
     <section id="contact" class="contact">
         <h2 class="section-title">联系我们</h2>
         <div class="contact-content">
-            <p style="text-align: center; margin-bottom: 2rem; color: #8a7a7a;">
-                选择您喜欢的蛋糕，提交订单，我们将尽快与您联系确认
-            </p>
-            <form class="contact-form" id="orderForm">
-                <input type="text" name="name" placeholder="您的姓名" required>
-                <input type="tel" name="phone" placeholder="联系电话" required>
-                <input type="text" name="wechat" placeholder="微信号（选填）">
-                <textarea name="message" rows="4" placeholder="备注信息（如：生日日期、庆祝人数等）"></textarea>
-                <button type="submit">提交订单</button>
-            </form>
+            <p style="margin-bottom: 1rem;">选择您喜欢的蛋糕，扫码添加微信定制</p>
+            <p style="color: #8a7a7a;">📱 微信同号：请联系获取</p>
             <div class="wechat-qr">
-                <p>📱 扫码添加微信咨询</p>
-                <div style="width: 150px; height: 150px; background: #fff; margin: 0 auto; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
-                    <span style="color: #8a7a7a;">[微信二维码]</span>
+                <div class="qr-placeholder">
+                    [微信二维码]
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>🎂 甜蜜蛋糕 | 用心定制每一份甜蜜</p>
+        <p>👼 天使蛋糕 | 用心定制每一份甜蜜</p>
         <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.7;">© 2026 All Rights Reserved</p>
     </footer>
-
-    <!-- 选蛋糕确认弹窗 -->
-    <div class="modal" id="cakeModal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h3 style="margin-bottom: 1rem;">已选蛋糕</h3>
-            <div class="selected-cakes" id="selectedCakes">
-                <p style="color: #8a7a7a;">暂无选择</p>
-            </div>
-            <button class="select-btn" onclick="closeModal()">继续选蛋糕</button>
-        </div>
-    </div>
-
-    <script>
-        // 蛋糕数据（稍后替换为真实图片和价格）
-        const cakes = [
-            {
-                id: 1,
-                name: '经典奶油蛋糕',
-                description: '新鲜奶油搭配水果夹心，简约却不简单',
-                price: 188,
-                emoji: '🎂'
-            },
-            {
-                id: 2,
-                name: '巧克力慕斯',
-                description: '浓郁黑巧克力慕斯，甜而不腻',
-                price: 228,
-                emoji: '🍫'
-            },
-            {
-                id: 3,
-                name: '草莓鲜奶蛋糕',
-                description: '新鲜草莓点缀，酸甜可口',
-                price: 218,
-                emoji: '🍓'
-            },
-            {
-                id: 4,
-                name: '芝士熔岩蛋糕',
-                description: '浓郁芝士内陷，入口即化',
-                price: 258,
-                emoji: '🧀'
-            },
-            {
-                id: 5,
-                name: '抹茶红豆蛋糕',
-                description: '日式抹茶风味，清新回甘',
-                price: 238,
-                emoji: '🍵'
-            },
-            {
-                id: 6,
-                name: '水果派对蛋糕',
-                description: '多种新鲜水果，缤纷美味',
-                price: 268,
-                emoji: '🥭'
-            }
-        ];
-
-        // 已选蛋糕
-        let selectedCakes = [];
-
-        // 渲染蛋糕卡片
-        function renderCakes() {
-            const grid = document.getElementById('cakeGrid');
-            grid.innerHTML = cakes.map(cake => `
-                <div class="cake-card">
-                    <div class="cake-image">${cake.emoji}</div>
-                    <div class="cake-info">
-                        <div class="cake-name">${cake.name}</div>
-                        <div class="cake-desc">${cake.description}</div>
-                        <div class="cake-price">¥${cake.price}</div>
-                        <button class="select-btn" onclick="selectCake(${cake.id})">加入选择</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // 选择蛋糕
-        function selectCake(id) {
-            const cake = cakes.find(c => c.id === id);
-            if (!selectedCakes.find(c => c.id === id)) {
-                selectedCakes.push(cake);
-                alert(`已添加：${cake.name}`);
-            } else {
-                alert('这款蛋糕已经选过了~');
-            }
-            updateSelectedDisplay();
-        }
-
-        // 更新已选显示
-        function updateSelectedDisplay() {
-            const display = document.getElementById('selectedCakes');
-            if (selectedCakes.length === 0) {
-                display.innerHTML = '<p style="color: #8a7a7a;">暂无选择</p>';
-            } else {
-                display.innerHTML = selectedCakes.map(cake => `
-                    <div class="selected-item">
-                        <span>${cake.emoji} ${cake.name}</span>
-                        <span>¥${cake.price}</span>
-                    </div>
-                `).join('');
-            }
-        }
-
-        // 弹窗
-        function closeModal() {
-            document.getElementById('cakeModal').classList.remove('active');
-        }
-
-        // 表单提交
-        document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            if (selectedCakes.length === 0) {
-                alert('请先选择至少一款蛋糕~');
-                return;
-            }
-
-            const formData = new FormData(this);
-            const data = {
-                name: formData.get('name'),
-                phone: formData.get('phone'),
-                wechat: formData.get('wechat'),
-                message: formData.get('message'),
-                cakes: selectedCakes
-            };
-
-            // 这里可以添加发送通知的逻辑
-            alert('订单提交成功！我们将尽快联系您~');
-            console.log('订单数据:', data);
-            
-            // 清空选择
-            selectedCakes = [];
-            updateSelectedDisplay();
-            this.reset();
-        });
-
-        // 初始化
-        renderCakes();
-    </script>
 </body>
 </html>
