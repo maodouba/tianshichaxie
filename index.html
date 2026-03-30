@@ -12,24 +12,24 @@
         }
 
         :root {
-            --primary: #e8b4b8;
-            --secondary: #f5e6e8;
+            --primary: #684029;
+            --secondary: #f5f0eb;
             --text: #5a4a4a;
-            --accent: #d4a574;
+            --accent: #BB9772;
             --white: #ffffff;
         }
 
         body {
             font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
             color: var(--text);
-            background: linear-gradient(135deg, #fdf6f7 0%, #f5e6e8 100%);
+            background: linear-gradient(135deg, #fdf6f7 0%, #f5f0eb 100%);
             line-height: 1.6;
         }
 
         header {
             background: var(--white);
             padding: 1rem 2rem;
-            box-shadow: 0 2px 20px rgba(232, 180, 184, 0.2);
+            box-shadow: 0 2px 20px rgba(104, 64, 41, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -43,10 +43,10 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
+        .logo img {
+            height: 45px;
+            vertical-align: middle;
+            border-radius: 8px;
         }
 
         nav a {
@@ -57,7 +57,7 @@
         }
 
         nav a:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
 
         .hero {
@@ -97,7 +97,7 @@
             display: block;
             width: 60px;
             height: 3px;
-            background: var(--primary);
+            background: var(--accent);
             margin: 1rem auto 0;
         }
 
@@ -113,7 +113,7 @@
             padding: 2rem;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(232, 180, 184, 0.15);
+            box-shadow: 0 10px 30px rgba(104, 64, 41, 0.1);
         }
 
         .ingredient-icon {
@@ -146,18 +146,14 @@
             padding: 1.5rem 2rem;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(232, 180, 184, 0.15);
+            box-shadow: 0 5px 20px rgba(104, 64, 41, 0.1);
             min-width: 120px;
-        }
-
-        .size-card.active {
-            border: 3px solid var(--primary);
         }
 
         .size-name {
             font-size: 1.5rem;
             font-weight: bold;
-            color: var(--primary);
+            color: var(--accent);
         }
 
         .size-desc {
@@ -174,7 +170,7 @@
         /* 蛋糕画廊 */
         .cake-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
         }
 
@@ -182,7 +178,7 @@
             background: var(--white);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(232, 180, 184, 0.15);
+            box-shadow: 0 10px 30px rgba(104, 64, 41, 0.1);
             transition: all 0.3s;
         }
 
@@ -192,12 +188,18 @@
 
         .cake-image {
             width: 100%;
-            height: 250px;
+            height: 280px;
             background: var(--secondary);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 4rem;
+        }
+
+        .cake-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .cake-info {
@@ -213,12 +215,18 @@
         .cake-desc {
             color: #8a7a7a;
             font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cake-spec {
+            color: #8a7a7a;
+            font-size: 0.85rem;
             margin-bottom: 1rem;
         }
 
         .cake-price {
             font-size: 1.4rem;
-            color: var(--primary);
+            color: var(--accent);
             font-weight: bold;
         }
 
@@ -242,12 +250,12 @@
 
         .flavor-tag:hover,
         .flavor-tag.active {
-            border-color: var(--primary);
-            background: var(--primary);
+            border-color: var(--accent);
+            background: var(--accent);
             color: var(--white);
         }
 
-        /* 联系方式 */
+        /* 联系我们 */
         .contact {
             background: var(--white);
             padding: 4rem 2rem;
@@ -267,22 +275,24 @@
             display: inline-block;
         }
 
-        .qr-placeholder {
+        .wechat-qr img {
             width: 150px;
             height: 150px;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             border-radius: 10px;
-            color: #8a7a7a;
         }
 
         footer {
-            background: var(--text);
+            background: var(--primary);
             color: var(--white);
             text-align: center;
             padding: 2rem;
+        }
+
+        footer img {
+            height: 30px;
+            vertical-align: middle;
+            border-radius: 6px;
+            margin-right: 8px;
         }
 
         @media (max-width: 768px) {
@@ -313,7 +323,7 @@
 <body>
     <header>
         <div class="header-content">
-            <img src="logo_small.png" alt="天使茶歇" style="height:45px;vertical-align:middle;border-radius:8px;">
+            <img src="logo_small.png" alt="天使茶歇" class="logo">
             <nav>
                 <a href="#ingredients">原料</a>
                 <a href="#sizes">尺寸</a>
@@ -370,24 +380,24 @@
         <h2 class="section-title">尺寸选择</h2>
         <div class="size-options">
             <div class="size-card">
-                <div class="size-name">6寸</div>
-                <div class="size-desc">1-2人食用</div>
-                <div class="size-price">¥188起</div>
+                <div class="size-name">1.0磅</div>
+                <div class="size-desc">约454g / 1-2人</div>
+                <div class="size-price">¥198起</div>
             </div>
             <div class="size-card">
-                <div class="size-name">8寸</div>
-                <div class="size-desc">3-5人食用</div>
+                <div class="size-name">1.5磅</div>
+                <div class="size-desc">约681g / 3-4人</div>
+                <div class="size-price">¥228起</div>
+            </div>
+            <div class="size-card">
+                <div class="size-name">2.0磅</div>
+                <div class="size-desc">约908g / 4-6人</div>
                 <div class="size-price">¥268起</div>
             </div>
             <div class="size-card">
-                <div class="size-name">10寸</div>
-                <div class="size-desc">6-8人食用</div>
+                <div class="size-name">3.0磅</div>
+                <div class="size-desc">约1360g / 8-10人</div>
                 <div class="size-price">¥368起</div>
-            </div>
-            <div class="size-card">
-                <div class="size-name">12寸</div>
-                <div class="size-desc">10-12人食用</div>
-                <div class="size-price">¥468起</div>
             </div>
         </div>
     </section>
@@ -414,49 +424,109 @@
             <div class="cake-card">
                 <div class="cake-image">🎂</div>
                 <div class="cake-info">
-                    <div class="cake-name">经典奶油蛋糕</div>
-                    <div class="cake-desc">新鲜奶油 + 水果夹心，简约经典</div>
-                    <div class="cake-price">¥188起</div>
-                </div>
-            </div>
-            <div class="cake-card">
-                <div class="cake-image">🍫</div>
-                <div class="cake-info">
-                    <div class="cake-name">巧克力慕斯</div>
-                    <div class="cake-desc">法芙娜巧克力，浓郁丝滑</div>
-                    <div class="cake-price">¥228起</div>
+                    <div class="cake-name">浅草（龙井茶）</div>
+                    <div class="cake-desc">清新龙井茶香，甘醇怡人</div>
+                    <div class="cake-spec">1.0磅 / 约454g</div>
+                    <div class="cake-price">¥268</div>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🍓</div>
                 <div class="cake-info">
-                    <div class="cake-name">草莓鲜奶蛋糕</div>
-                    <div class="cake-desc">新鲜草莓点缀，酸甜可口</div>
-                    <div class="cake-price">¥218起</div>
+                    <div class="cake-name">草莓奶油蛋糕</div>
+                    <div class="cake-desc">新鲜草莓搭配丝滑奶油</div>
+                    <div class="cake-spec">2.0磅 / 约908g</div>
+                    <div class="cake-price">¥268</div>
                 </div>
             </div>
             <div class="cake-card">
-                <div class="cake-image">🧀</div>
+                <div class="cake-image">🍫</div>
                 <div class="cake-info">
-                    <div class="cake-name">芝士熔岩蛋糕</div>
-                    <div class="cake-desc">浓郁芝士内陷，入口即化</div>
-                    <div class="cake-price">¥258起</div>
-                </div>
-            </div>
-            <div class="cake-card">
-                <div class="cake-image">🍵</div>
-                <div class="cake-info">
-                    <div class="cake-name">抹茶红豆蛋糕</div>
-                    <div class="cake-desc">日式抹茶风味，清新回甘</div>
-                    <div class="cake-price">¥238起</div>
+                    <div class="cake-name">白羊座（榛子巧克力）</div>
+                    <div class="cake-desc">榛子与巧克力的完美融合</div>
+                    <div class="cake-spec">1.0磅 / 约454g</div>
+                    <div class="cake-price">¥298</div>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🥭</div>
                 <div class="cake-info">
-                    <div class="cake-name">水果派对蛋糕</div>
-                    <div class="cake-desc">多种新鲜水果，缤纷美味</div>
-                    <div class="cake-price">¥268起</div>
+                    <div class="cake-name">树上熟</div>
+                    <div class="cake-desc">当季新鲜水果，天然甜美</div>
+                    <div class="cake-spec">1.0磅 / 约454g</div>
+                    <div class="cake-price">¥268</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🌸</div>
+                <div class="cake-info">
+                    <div class="cake-name">茉莉芭乐</div>
+                    <div class="cake-desc">茉莉花香与芭乐的清甜</div>
+                    <div class="cake-spec">1.0磅 / 约454g</div>
+                    <div class="cake-price">¥198</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">☕</div>
+                <div class="cake-info">
+                    <div class="cake-name">生椰拿铁</div>
+                    <div class="cake-desc">椰香与咖啡的奇妙碰撞</div>
+                    <div class="cake-spec">1.0磅 / 约454g</div>
+                    <div class="cake-price">¥268</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🌿</div>
+                <div class="cake-info">
+                    <div class="cake-name">蔓生</div>
+                    <div class="cake-desc">清新自然，入口即化</div>
+                    <div class="cake-spec">1.0磅 / 约454g</div>
+                    <div class="cake-price">¥268</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">❤️</div>
+                <div class="cake-info">
+                    <div class="cake-name">深爱</div>
+                    <div class="cake-desc">浓郁深情，适合浪漫时刻</div>
+                    <div class="cake-spec">1.0磅 / 约454g</div>
+                    <div class="cake-price">¥268</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🖤</div>
+                <div class="cake-info">
+                    <div class="cake-name">布莱克</div>
+                    <div class="cake-desc">经典黑色巧克力风格</div>
+                    <div class="cake-spec">1.0磅 / 约454g</div>
+                    <div class="cake-price">¥268</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🦋</div>
+                <div class="cake-info">
+                    <div class="cake-name">惊鸿</div>
+                    <div class="cake-desc">如惊鸿一瞥，美丽难忘</div>
+                    <div class="cake-spec">1.5磅 / 约681g</div>
+                    <div class="cake-price">¥198</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🧀</div>
+                <div class="cake-info">
+                    <div class="cake-name">朗姆芝士</div>
+                    <div class="cake-desc">浓郁芝士，微带朗姆酒香</div>
+                    <div class="cake-spec">1.0磅 / 约454g</div>
+                    <div class="cake-price">¥198</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🫐</div>
+                <div class="cake-info">
+                    <div class="cake-name">黑越橘（蓝莓轻乳酪）</div>
+                    <div class="cake-desc">蓝莓与乳酪的酸甜组合</div>
+                    <div class="cake-spec">2.0磅 / 约908g</div>
+                    <div class="cake-price">¥268</div>
                 </div>
             </div>
         </div>
@@ -469,15 +539,13 @@
             <p style="margin-bottom: 1rem;">选择您喜欢的蛋糕，扫码添加微信定制</p>
             <p style="color: #8a7a7a;">📱 微信同号：18033401160</p>
             <div class="wechat-qr">
-                <div class="qr-placeholder">
-                    <img src="wechat-qr.jpg" style="width:150px;height:150px;border-radius:10px;">
-                </div>
+                <img src="wechat-qr.jpg" alt="微信二维码">
             </div>
         </div>
     </section>
 
     <footer>
-        <p><img src="logo_small.png" alt="天使茶歇" style="height:30px;vertical-align:middle;border-radius:6px;margin-right:8px;">天使茶歇 | 用心定制每一份甜蜜</p>
+        <p><img src="logo_small.png" alt="天使茶歇">天使茶歇 | 用心定制每一份甜蜜</p>
         <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.7;">© 2026 All Rights Reserved</p>
     </footer>
 </body>
