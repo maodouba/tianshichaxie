@@ -62,57 +62,57 @@
 
         .hero {
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 3rem 2rem;
             background: var(--white);
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--text);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #8a7a7a;
             max-width: 600px;
-            margin: 0 auto 2rem;
+            margin: 0 auto;
         }
 
         .section {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 3rem 2rem;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
             position: relative;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 50px;
             height: 3px;
             background: var(--accent);
-            margin: 1rem auto 0;
+            margin: 0.8rem auto 0;
         }
 
         /* 蛋糕画廊 */
         .cake-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
         }
 
         .cake-card {
             background: var(--white);
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(104, 64, 41, 0.1);
+            box-shadow: 0 8px 25px rgba(104, 64, 41, 0.1);
             transition: all 0.3s;
         }
 
@@ -122,52 +122,59 @@
 
         .cake-image {
             width: 100%;
-            height: 260px;
+            height: 200px;
             background: var(--secondary);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-        }
-
-        .cake-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            font-size: 3.5rem;
         }
 
         .cake-info {
-            padding: 1.5rem;
+            padding: 1.2rem;
         }
 
         .cake-name {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .cake-desc {
-            color: #8a7a7a;
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
+            line-height: 1.3;
         }
 
         .cake-price {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             color: var(--accent);
             font-weight: bold;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #FF6B6B;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        .badge-new {
+            background: #4ECDC4;
+        }
+
+        .badge-hot {
+            background: #FF6B6B;
         }
 
         /* 联系我们 */
         .contact {
             background: var(--white);
-            padding: 4rem 2rem;
+            padding: 3rem 2rem;
             text-align: center;
         }
 
         .wechat-qr {
-            margin-top: 2rem;
-            padding: 2rem;
+            margin-top: 1.5rem;
+            padding: 1.5rem;
             background: var(--secondary);
             border-radius: 15px;
             display: inline-block;
@@ -195,7 +202,7 @@
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             
             .header-content {
@@ -204,7 +211,18 @@
             }
             
             nav a {
-                margin: 0 1rem;
+                margin: 0 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .cake-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 1rem;
+            }
+            
+            .cake-image {
+                height: 160px;
+                font-size: 3rem;
             }
         }
     </style>
@@ -214,10 +232,11 @@
         <div class="header-content">
             <img src="logo_small.png" alt="天使茶歇" class="logo">
             <nav>
-                <a href="#afternoon">下午茶</a>
-                <a href="#birthday">生日蛋糕</a>
+                <a href="#hot">人气爆款</a>
+                <a href="#cake">生日蛋糕</a>
                 <a href="#cartoon">卡通蛋糕</a>
-                <a href="#flowers">裱花蛋糕</a>
+                <a href="#flower">裱花蛋糕</a>
+                <a href="#dessert">下午茶</a>
                 <a href="#contact">联系我们</a>
             </nav>
         </div>
@@ -225,113 +244,80 @@
 
     <section class="hero">
         <h1>天使茶歇</h1>
-        <p>企业下午茶 · 生日蛋糕 · 点心套盒</p>
+        <p>企业下午茶 · 生日蛋糕 · 点心套盒 | 精选食材，匠心制作</p>
     </section>
 
-    <!-- 下午茶 -->
-    <section id="afternoon" class="section" style="background: var(--white);">
-        <h2 class="section-title">下午茶点心</h2>
+    <!-- 人气爆款 -->
+    <section id="hot" class="section" style="background: var(--white);">
+        <h2 class="section-title">🏆 人气爆款</h2>
         <div class="cake-grid">
             <div class="cake-card">
-                <div class="cake-image">🎂</div>
+                <div class="cake-image">💕</div>
                 <div class="cake-info">
-                    <div class="cake-name">山楂红丝绒卷</div>
-                    <div class="cake-desc">精选新鲜山楂熬制内馅，保留果肉的微酸果香与软糯质感</div>
-                    <div class="cake-price">¥128</div>
+                    <div class="cake-name"><span class="badge badge-hot">人气第1</span>怦然心动</div>
+                    <div class="cake-price">¥218</div>
                 </div>
             </div>
             <div class="cake-card">
-                <div class="cake-image">🍰</div>
+                <div class="cake-image">🐻</div>
                 <div class="cake-info">
-                    <div class="cake-name">红枣枸杞糯米卷</div>
-                    <div class="cake-desc">养生甜品，红枣枸杞搭配糯米，补血养颜</div>
-                    <div class="cake-price">¥108</div>
+                    <div class="cake-name"><span class="badge badge-hot">人气第4</span>翻糖爱心熊</div>
+                    <div class="cake-price">¥248</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">👑</div>
+                <div class="cake-info">
+                    <div class="cake-name"><span class="badge badge-hot">销量第2</span>鲜花皇冠</div>
+                    <div class="cake-price">¥218</div>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🍓</div>
                 <div class="cake-info">
-                    <div class="cake-name">草莓意式奶冻</div>
-                    <div class="cake-desc">进口草莓，奶香浓郁，入口即化</div>
-                    <div class="cake-price">¥148</div>
+                    <div class="cake-name"><span class="badge badge-hot">人气第7</span>树莓蛋糕</div>
+                    <div class="cake-price">¥238</div>
                 </div>
             </div>
             <div class="cake-card">
-                <div class="cake-image">🍗</div>
+                <div class="cake-image">🥭</div>
                 <div class="cake-info">
-                    <div class="cake-name">椒麻鸡</div>
-                    <div class="cake-desc">麻辣鲜香，开胃小食</div>
-                    <div class="cake-price">¥88</div>
+                    <div class="cake-name"><span class="badge badge-new">新品</span>十个勤天</div>
+                    <div class="cake-price">¥248</div>
                 </div>
             </div>
             <div class="cake-card">
-                <div class="cake-image">🍋</div>
+                <div class="cake-image">💌</div>
                 <div class="cake-info">
-                    <div class="cake-name">柠檬无骨鸡爪</div>
-                    <div class="cake-desc">酸辣爽口，追剧必备</div>
-                    <div class="cake-price">¥129</div>
+                    <div class="cake-name"><span class="badge badge-new">新品第3</span>花间信笺</div>
+                    <div class="cake-price">¥218</div>
                 </div>
             </div>
             <div class="cake-card">
-                <div class="cake-image">🦐</div>
+                <div class="cake-image">🌸</div>
                 <div class="cake-info">
-                    <div class="cake-name">荔枝虾球</div>
-                    <div class="cake-desc">新鲜虾仁，Q弹鲜美</div>
-                    <div class="cake-price">¥158</div>
-                </div>
-            </div>
-            <div class="cake-card">
-                <div class="cake-image">🍵</div>
-                <div class="cake-info">
-                    <div class="cake-name">小山园抹茶慕斯</div>
-                    <div class="cake-desc">日本小山园抹茶，细腻丝滑，清新回甘</div>
-                    <div class="cake-price">¥198</div>
-                </div>
-            </div>
-            <div class="cake-card">
-                <div class="cake-image">🍙</div>
-                <div class="cake-info">
-                    <div class="cake-name">肉松小贝</div>
-                    <div class="cake-desc">咸香肉松，软糯蛋糕</div>
-                    <div class="cake-price">¥88</div>
-                </div>
-            </div>
-            <div class="cake-card">
-                <div class="cake-image">🥐</div>
-                <div class="cake-info">
-                    <div class="cake-name">德式肠仔可颂</div>
-                    <div class="cake-desc">酥脆可颂，肠仔香浓</div>
-                    <div class="cake-price">¥118</div>
-                </div>
-            </div>
-            <div class="cake-card">
-                <div class="cake-image">🥖</div>
-                <div class="cake-info">
-                    <div class="cake-name">萨拉米藤椒鸡肉可颂</div>
-                    <div class="cake-desc">藤椒风味，香辣可口</div>
-                    <div class="cake-price">¥138</div>
+                    <div class="cake-name">不负时光</div>
+                    <div class="cake-price">¥218</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 生日蛋糕 -->
-    <section id="birthday" class="section">
-        <h2 class="section-title">生日蛋糕</h2>
+    <section id="cake" class="section">
+        <h2 class="section-title">🎂 生日蛋糕</h2>
         <div class="cake-grid">
             <div class="cake-card">
                 <div class="cake-image">🥭</div>
                 <div class="cake-info">
                     <div class="cake-name">杨枝甘露蛋糕</div>
-                    <div class="cake-desc">芒果椰浆，清爽甜蜜</div>
                     <div class="cake-price">¥238</div>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🍉</div>
                 <div class="cake-info">
-                    <div class="cake-name">杨梅和西瓜的完美组合</div>
-                    <div class="cake-desc">夏日限定，清新果香</div>
+                    <div class="cake-name">杨梅和西瓜</div>
                     <div class="cake-price">¥238</div>
                 </div>
             </div>
@@ -339,7 +325,6 @@
                 <div class="cake-image">🍵</div>
                 <div class="cake-info">
                     <div class="cake-name">抹茶柚子生日蛋糕</div>
-                    <div class="cake-desc">日本抹茶，清新柚子</div>
                     <div class="cake-price">¥238</div>
                 </div>
             </div>
@@ -347,8 +332,84 @@
                 <div class="cake-image">🍵</div>
                 <div class="cake-info">
                     <div class="cake-name">抹茶慕斯</div>
-                    <div class="cake-desc">细腻慕斯，入口即化</div>
-                    <div class="cake-price">¥238</div>
+                    <div class="cake-price">¥238起</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🥛</div>
+                <div class="cake-info">
+                    <div class="cake-name">酸奶慕斯</div>
+                    <div class="cake-price">¥298</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍍</div>
+                <div class="cake-info">
+                    <div class="cake-name">椰香凤梨蛋糕</div>
+                    <div class="cake-price">¥218</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍓</div>
+                <div class="cake-info">
+                    <div class="cake-name">草莓断层蛋糕</div>
+                    <div class="cake-price">¥188</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🥭</div>
+                <div class="cake-info">
+                    <div class="cake-name">芒果奶冻卷</div>
+                    <div class="cake-price">¥128</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍵</div>
+                <div class="cake-info">
+                    <div class="cake-name">伯爵红茶蛋糕卷</div>
+                    <div class="cake-price">¥88</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍰</div>
+                <div class="cake-info">
+                    <div class="cake-name">日式瑞士卷</div>
+                    <div class="cake-price">¥88</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍰</div>
+                <div class="cake-info">
+                    <div class="cake-name">断层蛋糕</div>
+                    <div class="cake-price">¥188</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍓</div>
+                <div class="cake-info">
+                    <div class="cake-name">鲜果蛋糕</div>
+                    <div class="cake-price">¥188</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍑</div>
+                <div class="cake-info">
+                    <div class="cake-name">夏日芒芒</div>
+                    <div class="cake-price">¥188</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍇</div>
+                <div class="cake-info">
+                    <div class="cake-name">覆盆子慕斯</div>
+                    <div class="cake-price">¥298</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍋</div>
+                <div class="cake-info">
+                    <div class="cake-name">柠檬酸奶芝士蛋糕</div>
+                    <div class="cake-price">¥148</div>
                 </div>
             </div>
         </div>
@@ -356,13 +417,12 @@
 
     <!-- 卡通蛋糕 -->
     <section id="cartoon" class="section" style="background: var(--white);">
-        <h2 class="section-title">卡通蛋糕</h2>
+        <h2 class="section-title">🦊 卡通蛋糕</h2>
         <div class="cake-grid">
             <div class="cake-card">
                 <div class="cake-image">🦊</div>
                 <div class="cake-info">
                     <div class="cake-name">玲娜贝儿</div>
-                    <div class="cake-desc">迪士尼同款，童趣可爱</div>
                     <div class="cake-price">¥338</div>
                 </div>
             </div>
@@ -370,78 +430,97 @@
                 <div class="cake-image">🎀</div>
                 <div class="cake-info">
                     <div class="cake-name">库洛米蛋糕</div>
-                    <div class="cake-desc">三丽鸥联名，梦幻甜美</div>
                     <div class="cake-price">¥228</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🦆</div>
+                <div class="cake-info">
+                    <div class="cake-name">唐老鸭蛋糕</div>
+                    <div class="cake-price">¥338</div>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🕷️</div>
                 <div class="cake-info">
                     <div class="cake-name">蜘蛛侠</div>
-                    <div class="cake-desc">漫威英雄，男宝最爱</div>
+                    <div class="cake-price">¥218起</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🚗</div>
+                <div class="cake-info">
+                    <div class="cake-name">大G蛋糕</div>
                     <div class="cake-price">¥218</div>
                 </div>
             </div>
             <div class="cake-card">
-                <div class="cake-image">🌙</div>
+                <div class="cake-image">👾</div>
                 <div class="cake-info">
-                    <div class="cake-name">漫步月球</div>
-                    <div class="cake-desc">太空主题，梦幻星际</div>
+                    <div class="cake-name">奥特曼蛋糕</div>
                     <div class="cake-price">¥248</div>
                 </div>
             </div>
             <div class="cake-card">
-                <div class="cake-image">👑</div>
+                <div class="cake-image">🦄</div>
+                <div class="cake-info">
+                    <div class="cake-name">哪吒蛋糕</div>
+                    <div class="cake-price">¥288</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🐰</div>
+                <div class="cake-info">
+                    <div class="cake-name">labubu蛋糕</div>
+                    <div class="cake-price">¥268</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🐻</div>
+                <div class="cake-info">
+                    <div class="cake-name">Jelly cat</div>
+                    <div class="cake-price">¥178</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🐻</div>
+                <div class="cake-info">
+                    <div class="cake-name">小熊蛋糕</div>
+                    <div class="cake-price">¥248</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🐻</div>
                 <div class="cake-info">
                     <div class="cake-name">周岁王子</div>
-                    <div class="cake-desc">王子主题，庆典必备</div>
                     <div class="cake-price">¥248</div>
                 </div>
             </div>
             <div class="cake-card">
-                <div class="cake-image">🦊</div>
+                <div class="cake-image">🦄</div>
                 <div class="cake-info">
-                    <div class="cake-name">玲娜贝儿蛋糕</div>
-                    <div class="cake-desc">迪士尼同款，童趣可爱</div>
-                    <div class="cake-price">¥228</div>
+                    <div class="cake-name">漫步月球</div>
+                    <div class="cake-price">¥248</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 裱花蛋糕 -->
-    <section id="flowers" class="section">
-        <h2 class="section-title">裱花蛋糕</h2>
+    <section id="flower" class="section">
+        <h2 class="section-title">💐 裱花蛋糕</h2>
         <div class="cake-grid">
-            <div class="cake-card">
-                <div class="cake-image">🍓</div>
-                <div class="cake-info">
-                    <div class="cake-name">树莓蛋糕</div>
-                    <div class="cake-desc">新鲜树莓，酸甜可口</div>
-                    <div class="cake-price">¥238</div>
-                </div>
-            </div>
-            <div class="cake-card">
-                <div class="cake-image">🌸</div>
-                <div class="cake-info">
-                    <div class="cake-name">落花有意</div>
-                    <div class="cake-desc">花瓣飘落，诗意绵绵</div>
-                    <div class="cake-price">¥218</div>
-                </div>
-            </div>
             <div class="cake-card">
                 <div class="cake-image">🎀</div>
                 <div class="cake-info">
                     <div class="cake-name">粉色蝴蝶结</div>
-                    <div class="cake-desc">少女心爆棚，浪漫甜美</div>
                     <div class="cake-price">¥248</div>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">💙</div>
                 <div class="cake-info">
-                    <div class="cake-name">雾霾蓝裱花蛋糕</div>
-                    <div class="cake-desc">高级色调，优雅大方</div>
+                    <div class="cake-name">雾霾蓝裱花</div>
                     <div class="cake-price">¥238</div>
                 </div>
             </div>
@@ -449,7 +528,6 @@
                 <div class="cake-image">🧜‍♀️</div>
                 <div class="cake-info">
                     <div class="cake-name">美人鱼蛋糕</div>
-                    <div class="cake-desc">海洋元素，梦幻童话</div>
                     <div class="cake-price">¥228</div>
                 </div>
             </div>
@@ -457,8 +535,252 @@
                 <div class="cake-image">💰</div>
                 <div class="cake-info">
                     <div class="cake-name">发财手绘蛋糕</div>
-                    <div class="cake-desc">手绘图案，寓意美好</div>
                     <div class="cake-price">¥288</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🌸</div>
+                <div class="cake-info">
+                    <div class="cake-name">蝶恋花香</div>
+                    <div class="cake-price">¥238</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">💐</div>
+                <div class="cake-info">
+                    <div class="cake-name">粉色记忆</div>
+                    <div class="cake-price">¥218</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🦋</div>
+                <div class="cake-info">
+                    <div class="cake-name">梦幻蝴蝶</div>
+                    <div class="cake-price">¥218</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">💕</div>
+                <div class="cake-info">
+                    <div class="cake-name">粉黛少女心</div>
+                    <div class="cake-price">¥248</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🌺</div>
+                <div class="cake-info">
+                    <div class="cake-name">怦然心动</div>
+                    <div class="cake-price">¥218</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍓</div>
+                <div class="cake-info">
+                    <div class="cake-name">草莓花束</div>
+                    <div class="cake-price">¥218</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🌸</div>
+                <div class="cake-info">
+                    <div class="cake-name">鲜花皇冠</div>
+                    <div class="cake-price">¥218</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🌈</div>
+                <div class="cake-info">
+                    <div class="cake-name">芭乐斑斓蛋糕</div>
+                    <div class="cake-price">¥208</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 翻糖蛋糕 -->
+    <section id="fondant" class="section" style="background: var(--white);">
+        <h2 class="section-title">🎁 翻糖蛋糕</h2>
+        <div class="cake-grid">
+            <div class="cake-card">
+                <div class="cake-image">💰</div>
+                <div class="cake-info">
+                    <div class="cake-name"><span class="badge">预售</span>八方来财</div>
+                    <div class="cake-price">¥248</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🎊</div>
+                <div class="cake-info">
+                    <div class="cake-name"><span class="badge">预售</span>大富大贵</div>
+                    <div class="cake-price">¥288</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🌟</div>
+                <div class="cake-info">
+                    <div class="cake-name"><span class="badge">预售</span>未来可期</div>
+                    <div class="cake-price">¥258</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">⛲</div>
+                <div class="cake-info">
+                    <div class="cake-name">许愿池</div>
+                    <div class="cake-price">¥258</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🥃</div>
+                <div class="cake-info">
+                    <div class="cake-name"><span class="badge">预售</span>烟酒不分家</div>
+                    <div class="cake-price">¥258</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🎲</div>
+                <div class="cake-info">
+                    <div class="cake-name">杠上开花</div>
+                    <div class="cake-price">¥268</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍰</div>
+                <div class="cake-info">
+                    <div class="cake-name">栗子蒙布朗挞</div>
+                    <div class="cake-price">¥228</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍰</div>
+                <div class="cake-info">
+                    <div class="cake-name">抹茶慕斯切件礼盒</div>
+                    <div class="cake-price">¥158</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下午茶点心 -->
+    <section id="dessert" class="section">
+        <h2 class="section-title">☕ 下午茶点心</h2>
+        <div class="cake-grid">
+            <div class="cake-card">
+                <div class="cake-image">🍰</div>
+                <div class="cake-info">
+                    <div class="cake-name">山楂红丝绒卷</div>
+                    <div class="cake-price">¥128</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍡</div>
+                <div class="cake-info">
+                    <div class="cake-name">红枣枸杞糯米卷</div>
+                    <div class="cake-price">¥108</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍓</div>
+                <div class="cake-info">
+                    <div class="cake-name">草莓意式奶冻</div>
+                    <div class="cake-price">¥148</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍗</div>
+                <div class="cake-info">
+                    <div class="cake-name">椒麻鸡</div>
+                    <div class="cake-price">¥88</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍋</div>
+                <div class="cake-info">
+                    <div class="cake-name">柠檬无骨鸡爪</div>
+                    <div class="cake-price">¥129</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🦐</div>
+                <div class="cake-info">
+                    <div class="cake-name">荔枝虾球</div>
+                    <div class="cake-price">¥158</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍵</div>
+                <div class="cake-info">
+                    <div class="cake-name">小山园抹茶慕斯</div>
+                    <div class="cake-price">¥198</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍙</div>
+                <div class="cake-info">
+                    <div class="cake-name">肉松小贝</div>
+                    <div class="cake-price">¥88</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🥐</div>
+                <div class="cake-info">
+                    <div class="cake-name">德式肠仔可颂</div>
+                    <div class="cake-price">¥118</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🥖</div>
+                <div class="cake-info">
+                    <div class="cake-name">萨拉米藤椒鸡肉可颂</div>
+                    <div class="cake-price">¥138</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🥩</div>
+                <div class="cake-info">
+                    <div class="cake-name">帕斯雀牛肉可颂</div>
+                    <div class="cake-price">¥148</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🥐</div>
+                <div class="cake-info">
+                    <div class="cake-name">培根法式可颂</div>
+                    <div class="cake-price">¥118</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍗</div>
+                <div class="cake-info">
+                    <div class="cake-name">藤椒去骨猪蹄</div>
+                    <div class="cake-price">¥118</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🦆</div>
+                <div class="cake-info">
+                    <div class="cake-name">手撕酱鸭</div>
+                    <div class="cake-price">¥108</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍔</div>
+                <div class="cake-info">
+                    <div class="cake-name">墨鱼肠汉堡</div>
+                    <div class="cake-price">¥88</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍮</div>
+                <div class="cake-info">
+                    <div class="cake-name">黄金百香果巴巴露亚</div>
+                    <div class="cake-price">¥85</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍮</div>
+                <div class="cake-info">
+                    <div class="cake-name">芒果布丁麻薯</div>
+                    <div class="cake-price">¥88</div>
                 </div>
             </div>
         </div>
