@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>天使茶歇 | 定制生日蛋糕</title>
+    <title>天使茶歇 | 企业下午茶 | 生日蛋糕定制</title>
     <style>
         * {
             margin: 0;
@@ -101,76 +101,10 @@
             margin: 1rem auto 0;
         }
 
-        /* 原料展示 */
-        .ingredients {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .ingredient-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(104, 64, 41, 0.1);
-        }
-
-        .ingredient-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .ingredient-name {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .ingredient-desc {
-            color: #8a7a7a;
-            font-size: 0.9rem;
-        }
-
-        /* 尺寸选择 */
-        .size-options {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .size-card {
-            background: var(--white);
-            padding: 1.5rem 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(104, 64, 41, 0.1);
-            min-width: 120px;
-        }
-
-        .size-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--accent);
-        }
-
-        .size-desc {
-            color: #8a7a7a;
-            font-size: 0.85rem;
-        }
-
-        .size-price {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 0.5rem;
-        }
-
         /* 蛋糕画廊 */
         .cake-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 2rem;
         }
 
@@ -188,7 +122,7 @@
 
         .cake-image {
             width: 100%;
-            height: 280px;
+            height: 260px;
             background: var(--secondary);
             display: flex;
             align-items: center;
@@ -207,21 +141,15 @@
         }
 
         .cake-name {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
             margin-bottom: 0.5rem;
         }
 
         .cake-desc {
             color: #8a7a7a;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .cake-spec {
-            color: #8a7a7a;
             font-size: 0.85rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .cake-price {
@@ -230,41 +158,11 @@
             font-weight: bold;
         }
 
-        /* 口味选择 */
-        .flavor-options {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .flavor-tag {
-            background: var(--white);
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            border: 2px solid var(--secondary);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .flavor-tag:hover,
-        .flavor-tag.active {
-            border-color: var(--accent);
-            background: var(--accent);
-            color: var(--white);
-        }
-
         /* 联系我们 */
         .contact {
             background: var(--white);
             padding: 4rem 2rem;
             text-align: center;
-        }
-
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         .wechat-qr {
@@ -308,15 +206,6 @@
             nav a {
                 margin: 0 1rem;
             }
-            
-            .size-options {
-                gap: 1rem;
-            }
-            
-            .size-card {
-                min-width: 100px;
-                padding: 1rem;
-            }
         }
     </style>
 </head>
@@ -325,208 +214,251 @@
         <div class="header-content">
             <img src="logo_small.png" alt="天使茶歇" class="logo">
             <nav>
-                <a href="#ingredients">原料</a>
-                <a href="#sizes">尺寸</a>
-                <a href="#gallery">蛋糕</a>
+                <a href="#afternoon">下午茶</a>
+                <a href="#birthday">生日蛋糕</a>
+                <a href="#cartoon">卡通蛋糕</a>
+                <a href="#flowers">裱花蛋糕</a>
                 <a href="#contact">联系我们</a>
             </nav>
         </div>
     </header>
 
     <section class="hero">
-        <h1>定制专属生日蛋糕</h1>
-        <p>精选食材 · 匠心制作 · 甜蜜每一刻</p>
+        <h1>天使茶歇</h1>
+        <p>企业下午茶 · 生日蛋糕 · 点心套盒</p>
     </section>
 
-    <!-- 原料介绍 -->
-    <section id="ingredients" class="section">
-        <h2 class="section-title">优质原料</h2>
-        <div class="ingredients">
-            <div class="ingredient-card">
-                <div class="ingredient-icon">🥛</div>
-                <div class="ingredient-name">动物奶油</div>
-                <div class="ingredient-desc">安佳动物奶油，天然健康，入口细腻</div>
-            </div>
-            <div class="ingredient-card">
-                <div class="ingredient-icon">🥚</div>
-                <div class="ingredient-name">新鲜鸡蛋</div>
-                <div class="ingredient-desc">农家新鲜鸡蛋，营养丰富，色泽金黄</div>
-            </div>
-            <div class="ingredient-card">
-                <div class="ingredient-icon">🌾</div>
-                <div class="ingredient-name">精选面粉</div>
-                <div class="ingredient-desc">日式面粉，筋道柔软，口感细腻</div>
-            </div>
-            <div class="ingredient-card">
-                <div class="ingredient-icon">🍫</div>
-                <div class="ingredient-name">可可脂巧克力</div>
-                <div class="ingredient-desc">法芙娜巧克力，浓郁丝滑，苦中带甜</div>
-            </div>
-            <div class="ingredient-card">
-                <div class="ingredient-icon">🍓</div>
-                <div class="ingredient-name">新鲜水果</div>
-                <div class="ingredient-desc">当日采购新鲜水果，颗颗饱满</div>
-            </div>
-            <div class="ingredient-card">
-                <div class="ingredient-icon">🥜</div>
-                <div class="ingredient-name">天然坚果</div>
-                <div class="ingredient-desc">进口坚果，香脆可口，增添风味</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 尺寸选择 -->
-    <section id="sizes" class="section" style="background: var(--white);">
-        <h2 class="section-title">尺寸选择</h2>
-        <div class="size-options">
-            <div class="size-card">
-                <div class="size-name">1.0磅</div>
-                <div class="size-desc">约454g / 1-2人</div>
-                <div class="size-price">¥198起</div>
-            </div>
-            <div class="size-card">
-                <div class="size-name">1.5磅</div>
-                <div class="size-desc">约681g / 3-4人</div>
-                <div class="size-price">¥228起</div>
-            </div>
-            <div class="size-card">
-                <div class="size-name">2.0磅</div>
-                <div class="size-desc">约908g / 4-6人</div>
-                <div class="size-price">¥268起</div>
-            </div>
-            <div class="size-card">
-                <div class="size-name">3.0磅</div>
-                <div class="size-desc">约1360g / 8-10人</div>
-                <div class="size-price">¥368起</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 口味选择 -->
-    <section class="section">
-        <h2 class="section-title">可选口味</h2>
-        <div class="flavor-options">
-            <div class="flavor-tag">原味奶油</div>
-            <div class="flavor-tag">草莓</div>
-            <div class="flavor-tag">巧克力</div>
-            <div class="flavor-tag">抹茶</div>
-            <div class="flavor-tag">芝士</div>
-            <div class="flavor-tag">芒果</div>
-            <div class="flavor-tag">榴莲</div>
-            <div class="flavor-tag">蓝莓</div>
-        </div>
-    </section>
-
-    <!-- 蛋糕展示 -->
-    <section id="gallery" class="section" style="background: var(--white);">
-        <h2 class="section-title">蛋糕展示</h2>
+    <!-- 下午茶 -->
+    <section id="afternoon" class="section" style="background: var(--white);">
+        <h2 class="section-title">下午茶点心</h2>
         <div class="cake-grid">
             <div class="cake-card">
                 <div class="cake-image">🎂</div>
                 <div class="cake-info">
-                    <div class="cake-name">浅草（龙井茶）</div>
-                    <div class="cake-desc">清新龙井茶香，甘醇怡人</div>
-                    <div class="cake-spec">1.0磅 / 约454g</div>
-                    <div class="cake-price">¥268</div>
+                    <div class="cake-name">山楂红丝绒卷</div>
+                    <div class="cake-desc">酸甜开胃，精致美味</div>
+                    <div class="cake-price">¥128</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍰</div>
+                <div class="cake-info">
+                    <div class="cake-name">红枣枸杞糯米卷</div>
+                    <div class="cake-desc">养生甜品，补血养颜</div>
+                    <div class="cake-price">¥108</div>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🍓</div>
                 <div class="cake-info">
-                    <div class="cake-name">草莓奶油蛋糕</div>
-                    <div class="cake-desc">新鲜草莓搭配丝滑奶油</div>
-                    <div class="cake-spec">2.0磅 / 约908g</div>
-                    <div class="cake-price">¥268</div>
+                    <div class="cake-name">草莓意式奶冻</div>
+                    <div class="cake-desc">进口草莓，奶香浓郁</div>
+                    <div class="cake-price">¥148</div>
                 </div>
             </div>
             <div class="cake-card">
-                <div class="cake-image">🍫</div>
+                <div class="cake-image">🍗</div>
                 <div class="cake-info">
-                    <div class="cake-name">白羊座（榛子巧克力）</div>
-                    <div class="cake-desc">榛子与巧克力的完美融合</div>
-                    <div class="cake-spec">1.0磅 / 约454g</div>
-                    <div class="cake-price">¥298</div>
+                    <div class="cake-name">椒麻鸡</div>
+                    <div class="cake-desc">麻辣鲜香，开胃小食</div>
+                    <div class="cake-price">¥88</div>
                 </div>
             </div>
+            <div class="cake-card">
+                <div class="cake-image">🍋</div>
+                <div class="cake-info">
+                    <div class="cake-name">柠檬无骨鸡爪</div>
+                    <div class="cake-desc">酸辣爽口，追剧必备</div>
+                    <div class="cake-price">¥129</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🦐</div>
+                <div class="cake-info">
+                    <div class="cake-name">荔枝虾球</div>
+                    <div class="cake-desc">新鲜虾仁，Q弹鲜美</div>
+                    <div class="cake-price">¥158</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍵</div>
+                <div class="cake-info">
+                    <div class="cake-name">小山园抹茶慕斯</div>
+                    <div class="cake-desc">日本小山园抹茶，细腻丝滑</div>
+                    <div class="cake-price">¥198</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍙</div>
+                <div class="cake-info">
+                    <div class="cake-name">肉松小贝</div>
+                    <div class="cake-desc">咸香肉松，软糯蛋糕</div>
+                    <div class="cake-price">¥88</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🥐</div>
+                <div class="cake-info">
+                    <div class="cake-name">德式肠仔可颂</div>
+                    <div class="cake-desc">酥脆可颂，肠仔香浓</div>
+                    <div class="cake-price">¥118</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🥖</div>
+                <div class="cake-info">
+                    <div class="cake-name">萨拉米藤椒鸡肉可颂</div>
+                    <div class="cake-desc">藤椒风味，香辣可口</div>
+                    <div class="cake-price">¥138</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 生日蛋糕 -->
+    <section id="birthday" class="section">
+        <h2 class="section-title">生日蛋糕</h2>
+        <div class="cake-grid">
             <div class="cake-card">
                 <div class="cake-image">🥭</div>
                 <div class="cake-info">
-                    <div class="cake-name">树上熟</div>
-                    <div class="cake-desc">当季新鲜水果，天然甜美</div>
-                    <div class="cake-spec">1.0磅 / 约454g</div>
-                    <div class="cake-price">¥268</div>
+                    <div class="cake-name">杨枝甘露蛋糕</div>
+                    <div class="cake-desc">芒果椰浆，清爽甜蜜</div>
+                    <div class="cake-price">¥238</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍉</div>
+                <div class="cake-info">
+                    <div class="cake-name">杨梅和西瓜的完美组合</div>
+                    <div class="cake-desc">夏日限定，清新果香</div>
+                    <div class="cake-price">¥238</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍵</div>
+                <div class="cake-info">
+                    <div class="cake-name">抹茶柚子生日蛋糕</div>
+                    <div class="cake-desc">日本抹茶，清新柚子</div>
+                    <div class="cake-price">¥238</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🍵</div>
+                <div class="cake-info">
+                    <div class="cake-name">抹茶慕斯</div>
+                    <div class="cake-desc">细腻慕斯，入口即化</div>
+                    <div class="cake-price">¥238</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 卡通蛋糕 -->
+    <section id="cartoon" class="section" style="background: var(--white);">
+        <h2 class="section-title">卡通蛋糕</h2>
+        <div class="cake-grid">
+            <div class="cake-card">
+                <div class="cake-image">🦊</div>
+                <div class="cake-info">
+                    <div class="cake-name">玲娜贝儿</div>
+                    <div class="cake-desc">迪士尼同款，童趣可爱</div>
+                    <div class="cake-price">¥338</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🎀</div>
+                <div class="cake-info">
+                    <div class="cake-name">库洛米蛋糕</div>
+                    <div class="cake-desc">三丽鸥联名，梦幻甜美</div>
+                    <div class="cake-price">¥228</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🕷️</div>
+                <div class="cake-info">
+                    <div class="cake-name">蜘蛛侠</div>
+                    <div class="cake-desc">漫威英雄，男宝最爱</div>
+                    <div class="cake-price">¥218</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🌙</div>
+                <div class="cake-info">
+                    <div class="cake-name">漫步月球</div>
+                    <div class="cake-desc">太空主题，梦幻星际</div>
+                    <div class="cake-price">¥248</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">👑</div>
+                <div class="cake-info">
+                    <div class="cake-name">周岁王子</div>
+                    <div class="cake-desc">王子主题，庆典必备</div>
+                    <div class="cake-price">¥248</div>
+                </div>
+            </div>
+            <div class="cake-card">
+                <div class="cake-image">🦊</div>
+                <div class="cake-info">
+                    <div class="cake-name">玲娜贝儿蛋糕</div>
+                    <div class="cake-desc">迪士尼同款，童趣可爱</div>
+                    <div class="cake-price">¥228</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 裱花蛋糕 -->
+    <section id="flowers" class="section">
+        <h2 class="section-title">裱花蛋糕</h2>
+        <div class="cake-grid">
+            <div class="cake-card">
+                <div class="cake-image">🍓</div>
+                <div class="cake-info">
+                    <div class="cake-name">树莓蛋糕</div>
+                    <div class="cake-desc">新鲜树莓，酸甜可口</div>
+                    <div class="cake-price">¥238</div>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🌸</div>
                 <div class="cake-info">
-                    <div class="cake-name">茉莉芭乐</div>
-                    <div class="cake-desc">茉莉花香与芭乐的清甜</div>
-                    <div class="cake-spec">1.0磅 / 约454g</div>
-                    <div class="cake-price">¥198</div>
+                    <div class="cake-name">落花有意</div>
+                    <div class="cake-desc">花瓣飘落，诗意绵绵</div>
+                    <div class="cake-price">¥218</div>
                 </div>
             </div>
             <div class="cake-card">
-                <div class="cake-image">☕</div>
+                <div class="cake-image">🎀</div>
                 <div class="cake-info">
-                    <div class="cake-name">生椰拿铁</div>
-                    <div class="cake-desc">椰香与咖啡的奇妙碰撞</div>
-                    <div class="cake-spec">1.0磅 / 约454g</div>
-                    <div class="cake-price">¥268</div>
+                    <div class="cake-name">粉色蝴蝶结</div>
+                    <div class="cake-desc">少女心爆棚，浪漫甜美</div>
+                    <div class="cake-price">¥248</div>
                 </div>
             </div>
             <div class="cake-card">
-                <div class="cake-image">🌿</div>
+                <div class="cake-image">💙</div>
                 <div class="cake-info">
-                    <div class="cake-name">蔓生</div>
-                    <div class="cake-desc">清新自然，入口即化</div>
-                    <div class="cake-spec">1.0磅 / 约454g</div>
-                    <div class="cake-price">¥268</div>
+                    <div class="cake-name">雾霾蓝裱花蛋糕</div>
+                    <div class="cake-desc">高级色调，优雅大方</div>
+                    <div class="cake-price">¥238</div>
                 </div>
             </div>
             <div class="cake-card">
-                <div class="cake-image">❤️</div>
+                <div class="cake-image">🧜‍♀️</div>
                 <div class="cake-info">
-                    <div class="cake-name">深爱</div>
-                    <div class="cake-desc">浓郁深情，适合浪漫时刻</div>
-                    <div class="cake-spec">1.0磅 / 约454g</div>
-                    <div class="cake-price">¥268</div>
+                    <div class="cake-name">美人鱼蛋糕</div>
+                    <div class="cake-desc">海洋元素，梦幻童话</div>
+                    <div class="cake-price">¥228</div>
                 </div>
             </div>
             <div class="cake-card">
-                <div class="cake-image">🖤</div>
+                <div class="cake-image">💰</div>
                 <div class="cake-info">
-                    <div class="cake-name">布莱克</div>
-                    <div class="cake-desc">经典黑色巧克力风格</div>
-                    <div class="cake-spec">1.0磅 / 约454g</div>
-                    <div class="cake-price">¥268</div>
-                </div>
-            </div>
-            <div class="cake-card">
-                <div class="cake-image">🦋</div>
-                <div class="cake-info">
-                    <div class="cake-name">惊鸿</div>
-                    <div class="cake-desc">如惊鸿一瞥，美丽难忘</div>
-                    <div class="cake-spec">1.5磅 / 约681g</div>
-                    <div class="cake-price">¥198</div>
-                </div>
-            </div>
-            <div class="cake-card">
-                <div class="cake-image">🧀</div>
-                <div class="cake-info">
-                    <div class="cake-name">朗姆芝士</div>
-                    <div class="cake-desc">浓郁芝士，微带朗姆酒香</div>
-                    <div class="cake-spec">1.0磅 / 约454g</div>
-                    <div class="cake-price">¥198</div>
-                </div>
-            </div>
-            <div class="cake-card">
-                <div class="cake-image">🫐</div>
-                <div class="cake-info">
-                    <div class="cake-name">黑越橘（蓝莓轻乳酪）</div>
-                    <div class="cake-desc">蓝莓与乳酪的酸甜组合</div>
-                    <div class="cake-spec">2.0磅 / 约908g</div>
-                    <div class="cake-price">¥268</div>
+                    <div class="cake-name">发财手绘蛋糕</div>
+                    <div class="cake-desc">手绘图案，寓意美好</div>
+                    <div class="cake-price">¥288</div>
                 </div>
             </div>
         </div>
@@ -538,6 +470,7 @@
         <div class="contact-content">
             <p style="margin-bottom: 1rem;">选择您喜欢的蛋糕，扫码添加微信定制</p>
             <p style="color: #8a7a7a;">📱 微信同号：18033401160</p>
+            <p style="color: #8a7a7a; margin-top: 0.5rem;">💬 微信号：TisiCakeFUWU</p>
             <div class="wechat-qr">
                 <img src="wechat-qr.jpg" alt="微信二维码">
             </div>
