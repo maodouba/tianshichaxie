@@ -1159,7 +1159,7 @@
 
             // 渲染尺寸选项
             const sizeContainer = document.getElementById('sizeOptions');
-            const sizes = ['5寸 / 2-4人', '6寸 / 4-8人', '8寸 / 8-10人', '10寸 / 10-12人'];
+            const sizes = ['5寸 / 2-4人', '6寸 / 4-8人', '8寸 / 8-10人', '10寸 / 12-16人'];
             sizeContainer.innerHTML = sizes.map((s, i) => 
                 `<button class="option-btn ${i === 0 ? 'selected' : ''}" onclick="selectOption('size', this, ${i})">${s}</button>`
             ).join('');
@@ -1190,7 +1190,7 @@
             el.classList.add('selected');
 
             if (type === 'size') {
-                selectedSize = ['5寸 / 2-4人', '6寸 / 4-8人', '8寸 / 8-10人', '10寸 / 10-12人'][index];
+                selectedSize = ['5寸 / 2-4人', '6寸 / 4-8人', '8寸 / 8-10人', '10寸 / 12-16人'][index];
             } else if (type === 'filling') {
                 selectedFilling = fillings[index];
             } else if (type === 'fruit') {
