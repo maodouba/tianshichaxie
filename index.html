@@ -132,6 +132,13 @@
             align-items: center;
             justify-content: center;
             font-size: 3.5rem;
+            overflow: hidden;
+        }
+
+        .cake-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .cake-info {
@@ -535,7 +542,7 @@
             <button class="carousel-arrow prev" onclick="moveCarousel(-1)">‹</button>
             <div class="carousel-track" id="carouselTrack">
                 <div class="carousel-card" onclick="openModal('草莓断层蛋糕')">
-                    <div class="cake-image">🍓</div>
+                    <div class="cake-image"><img src="images/kaixin-shu-mei-1.jpg" style="width:100%;height:100%;object-fit:cover;" alt="草莓断层蛋糕"></div>
                     <div class="cake-info">
                         <div class="cake-name"><span class="carousel-badge">应季</span>草莓断层蛋糕</div>
                         <div class="cake-price">¥188起</div>
@@ -548,11 +555,11 @@
                         <div class="cake-price">¥238起</div>
                     </div>
                 </div>
-                <div class="carousel-card" onclick="openModal('覆盆子慕斯')">
-                    <div class="cake-image">🍇</div>
+                <div class="carousel-card" onclick="openModal('开心果树莓慕斯蛋糕')">
+                    <div class="cake-image"><img src="images/kaixin-shu-mei-1.jpg" style="width:100%;height:100%;object-fit:cover;" alt="开心果树莓慕斯蛋糕"></div>
                     <div class="cake-info">
-                        <div class="cake-name"><span class="carousel-badge">应季</span>覆盆子慕斯</div>
-                        <div class="cake-price">¥298起</div>
+                        <div class="cake-name"><span class="carousel-badge">新品</span>开心果树莓慕斯蛋糕</div>
+                        <div class="cake-price">¥288起</div>
                     </div>
                 </div>
                 <div class="carousel-card" onclick="openModal('夏日芒芒')">
@@ -1086,6 +1093,7 @@
         const cakeData = {
             // 生日蛋糕
             '杨枝甘露蛋糕': { basePrice: 238 },
+            '开心果树莓慕斯蛋糕': { basePrice: 288 },
             '杨梅和西瓜': { basePrice: 238 },
             '抹茶柚子生日蛋糕': { basePrice: 238 },
             '抹茶慕斯': { basePrice: 238 },
