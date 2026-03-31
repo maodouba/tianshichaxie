@@ -116,10 +116,12 @@
             transition: all 0.3s;
             display: flex;
             flex-direction: column;
+            cursor: pointer;
         }
 
         .cake-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(104, 64, 41, 0.18);
         }
 
         .cake-image {
@@ -532,36 +534,32 @@
         <div class="carousel-wrapper">
             <button class="carousel-arrow prev" onclick="moveCarousel(-1)">‹</button>
             <div class="carousel-track" id="carouselTrack">
-                <div class="carousel-card">
+                <div class="carousel-card" onclick="openModal('草莓断层蛋糕')">
                     <div class="cake-image">🍓</div>
                     <div class="cake-info">
                         <div class="cake-name"><span class="carousel-badge">应季</span>草莓断层蛋糕</div>
                         <div class="cake-price">¥188起</div>
-                        <button class="select-btn" onclick="openModal('草莓断层蛋糕')">🎂 选择规格</button>
                     </div>
                 </div>
-                <div class="carousel-card">
+                <div class="carousel-card" onclick="openModal('杨枝甘露蛋糕')">
                     <div class="cake-image">🥭</div>
                     <div class="cake-info">
                         <div class="cake-name"><span class="carousel-badge">应季</span>杨枝甘露蛋糕</div>
                         <div class="cake-price">¥238起</div>
-                        <button class="select-btn" onclick="openModal('杨枝甘露蛋糕')">🎂 选择规格</button>
                     </div>
                 </div>
-                <div class="carousel-card">
+                <div class="carousel-card" onclick="openModal('覆盆子慕斯')">
                     <div class="cake-image">🍇</div>
                     <div class="cake-info">
                         <div class="cake-name"><span class="carousel-badge">应季</span>覆盆子慕斯</div>
                         <div class="cake-price">¥298起</div>
-                        <button class="select-btn" onclick="openModal('覆盆子慕斯')">🎂 选择规格</button>
                     </div>
                 </div>
-                <div class="carousel-card">
+                <div class="carousel-card" onclick="openModal('夏日芒芒')">
                     <div class="cake-image">🍑</div>
                     <div class="cake-info">
                         <div class="cake-name"><span class="carousel-badge">应季</span>夏日芒芒</div>
                         <div class="cake-price">¥188起</div>
-                        <button class="select-btn" onclick="openModal('夏日芒芒')">🎂 选择规格</button>
                     </div>
                 </div>
             </div>
@@ -574,124 +572,109 @@
     <section id="cake" class="section">
         <h2 class="section-title">🎂 生日蛋糕</h2>
         <div class="cake-grid">
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('杨枝甘露蛋糕')">
                 <div class="cake-image">🥭</div>
                 <div class="cake-info">
                     <div class="cake-name">杨枝甘露蛋糕</div>
-                    <div class="cake-price">¥238 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('杨枝甘露蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥238起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('杨梅和西瓜')">
                 <div class="cake-image">🍉</div>
                 <div class="cake-info">
                     <div class="cake-name">杨梅和西瓜</div>
-                    <div class="cake-price">¥238 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('杨梅和西瓜')">🎂 选择规格</button>
+                    <div class="cake-price">¥238起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('抹茶柚子生日蛋糕')">
                 <div class="cake-image">🍵</div>
                 <div class="cake-info">
                     <div class="cake-name">抹茶柚子生日蛋糕</div>
-                    <div class="cake-price">¥238 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('抹茶柚子生日蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥238起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('抹茶慕斯')">
                 <div class="cake-image">🍵</div>
                 <div class="cake-info">
                     <div class="cake-name">抹茶慕斯</div>
-                    <div class="cake-price">¥238 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('抹茶慕斯')">🎂 选择规格</button>
+                    <div class="cake-price">¥238起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('酸奶慕斯')">
                 <div class="cake-image">🥛</div>
                 <div class="cake-info">
                     <div class="cake-name">酸奶慕斯</div>
-                    <div class="cake-price">¥298 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('酸奶慕斯')">🎂 选择规格</button>
+                    <div class="cake-price">¥298起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('椰香凤梨蛋糕')">
                 <div class="cake-image">🍍</div>
                 <div class="cake-info">
                     <div class="cake-name">椰香凤梨蛋糕</div>
-                    <div class="cake-price">¥218 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('椰香凤梨蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥218起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('草莓断层蛋糕')">
                 <div class="cake-image">🍓</div>
                 <div class="cake-info">
                     <div class="cake-name">草莓断层蛋糕</div>
-                    <div class="cake-price">¥188 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('草莓断层蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥188起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('芒果奶冻卷')">
                 <div class="cake-image">🥭</div>
                 <div class="cake-info">
                     <div class="cake-name">芒果奶冻卷</div>
-                    <div class="cake-price">¥128 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('芒果奶冻卷')">🎂 选择规格</button>
+                    <div class="cake-price">¥128起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('伯爵红茶蛋糕卷')">
                 <div class="cake-image">🍵</div>
                 <div class="cake-info">
                     <div class="cake-name">伯爵红茶蛋糕卷</div>
-                    <div class="cake-price">¥88 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('伯爵红茶蛋糕卷')">🎂 选择规格</button>
+                    <div class="cake-price">¥88起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('日式瑞士卷')">
                 <div class="cake-image">🍰</div>
                 <div class="cake-info">
                     <div class="cake-name">日式瑞士卷</div>
-                    <div class="cake-price">¥88 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('日式瑞士卷')">🎂 选择规格</button>
+                    <div class="cake-price">¥88起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('断层蛋糕')">
                 <div class="cake-image">🍰</div>
                 <div class="cake-info">
                     <div class="cake-name">断层蛋糕</div>
-                    <div class="cake-price">¥188 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('断层蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥188起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('鲜果蛋糕')">
                 <div class="cake-image">🍓</div>
                 <div class="cake-info">
                     <div class="cake-name">鲜果蛋糕</div>
-                    <div class="cake-price">¥188 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('鲜果蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥188起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('夏日芒芒')">
                 <div class="cake-image">🍑</div>
                 <div class="cake-info">
                     <div class="cake-name">夏日芒芒</div>
-                    <div class="cake-price">¥188 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('夏日芒芒')">🎂 选择规格</button>
+                    <div class="cake-price">¥188起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('覆盆子慕斯')">
                 <div class="cake-image">🍇</div>
                 <div class="cake-info">
                     <div class="cake-name">覆盆子慕斯</div>
-                    <div class="cake-price">¥298 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('覆盆子慕斯')">🎂 选择规格</button>
+                    <div class="cake-price">¥298起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('柠檬酸奶芝士蛋糕')">
                 <div class="cake-image">🍋</div>
                 <div class="cake-info">
                     <div class="cake-name">柠檬酸奶芝士蛋糕</div>
-                    <div class="cake-price">¥148 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('柠檬酸奶芝士蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥148起</div>
                 </div>
             </div>
         </div>
@@ -701,100 +684,88 @@
     <section id="cartoon" class="section" style="background: var(--white);">
         <h2 class="section-title">🦊 卡通蛋糕</h2>
         <div class="cake-grid">
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('玲娜贝儿')">
                 <div class="cake-image">🦊</div>
                 <div class="cake-info">
                     <div class="cake-name">玲娜贝儿</div>
-                    <div class="cake-price">¥338 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('玲娜贝儿')">🎂 选择规格</button>
+                    <div class="cake-price">¥338起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('库洛米蛋糕')">
                 <div class="cake-image">🎀</div>
                 <div class="cake-info">
                     <div class="cake-name">库洛米蛋糕</div>
-                    <div class="cake-price">¥228 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('库洛米蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥228起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('唐老鸭蛋糕')">
                 <div class="cake-image">🦆</div>
                 <div class="cake-info">
                     <div class="cake-name">唐老鸭蛋糕</div>
-                    <div class="cake-price">¥338 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('唐老鸭蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥338起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('蜘蛛侠')">
                 <div class="cake-image">🕷️</div>
                 <div class="cake-info">
                     <div class="cake-name">蜘蛛侠</div>
-                    <div class="cake-price">¥218 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('蜘蛛侠')">🎂 选择规格</button>
+                    <div class="cake-price">¥218起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('大G蛋糕')">
                 <div class="cake-image">🚗</div>
                 <div class="cake-info">
                     <div class="cake-name">大G蛋糕</div>
-                    <div class="cake-price">¥218 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('大G蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥218起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('奥特曼蛋糕')">
                 <div class="cake-image">👾</div>
                 <div class="cake-info">
                     <div class="cake-name">奥特曼蛋糕</div>
-                    <div class="cake-price">¥248 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('奥特曼蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥248起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('哪吒蛋糕')">
                 <div class="cake-image">🦄</div>
                 <div class="cake-info">
                     <div class="cake-name">哪吒蛋糕</div>
-                    <div class="cake-price">¥288 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('哪吒蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥288起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('labubu蛋糕')">
                 <div class="cake-image">🐰</div>
                 <div class="cake-info">
                     <div class="cake-name">labubu蛋糕</div>
-                    <div class="cake-price">¥268 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('labubu蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥268起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('Jelly cat')">
                 <div class="cake-image">🐻</div>
                 <div class="cake-info">
                     <div class="cake-name">Jelly cat</div>
-                    <div class="cake-price">¥178 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('Jelly cat')">🎂 选择规格</button>
+                    <div class="cake-price">¥178起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('小熊蛋糕')">
                 <div class="cake-image">🐻</div>
                 <div class="cake-info">
                     <div class="cake-name">小熊蛋糕</div>
-                    <div class="cake-price">¥248 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('小熊蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥248起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('周岁王子')">
                 <div class="cake-image">🐻</div>
                 <div class="cake-info">
                     <div class="cake-name">周岁王子</div>
-                    <div class="cake-price">¥248 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('周岁王子')">🎂 选择规格</button>
+                    <div class="cake-price">¥248起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('漫步月球')">
                 <div class="cake-image">🦄</div>
                 <div class="cake-info">
                     <div class="cake-name">漫步月球</div>
-                    <div class="cake-price">¥248 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('漫步月球')">🎂 选择规格</button>
+                    <div class="cake-price">¥248起</div>
                 </div>
             </div>
         </div>
@@ -804,100 +775,88 @@
     <section id="flower" class="section">
         <h2 class="section-title">💐 裱花蛋糕</h2>
         <div class="cake-grid">
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('粉色蝴蝶结')">
                 <div class="cake-image">🎀</div>
                 <div class="cake-info">
                     <div class="cake-name">粉色蝴蝶结</div>
-                    <div class="cake-price">¥248 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('粉色蝴蝶结')">🎂 选择规格</button>
+                    <div class="cake-price">¥248起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('雾霾蓝裱花')">
                 <div class="cake-image">💙</div>
                 <div class="cake-info">
                     <div class="cake-name">雾霾蓝裱花</div>
-                    <div class="cake-price">¥238 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('雾霾蓝裱花')">🎂 选择规格</button>
+                    <div class="cake-price">¥238起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('美人鱼蛋糕')">
                 <div class="cake-image">🧜‍♀️</div>
                 <div class="cake-info">
                     <div class="cake-name">美人鱼蛋糕</div>
-                    <div class="cake-price">¥228 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('美人鱼蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥228起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('发财手绘蛋糕')">
                 <div class="cake-image">💰</div>
                 <div class="cake-info">
                     <div class="cake-name">发财手绘蛋糕</div>
-                    <div class="cake-price">¥288 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('发财手绘蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥288起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('蝶恋花香')">
                 <div class="cake-image">🌸</div>
                 <div class="cake-info">
                     <div class="cake-name">蝶恋花香</div>
-                    <div class="cake-price">¥238 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('蝶恋花香')">🎂 选择规格</button>
+                    <div class="cake-price">¥238起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('粉色记忆')">
                 <div class="cake-image">💐</div>
                 <div class="cake-info">
                     <div class="cake-name">粉色记忆</div>
-                    <div class="cake-price">¥218 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('粉色记忆')">🎂 选择规格</button>
+                    <div class="cake-price">¥218起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('梦幻蝴蝶')">
                 <div class="cake-image">🦋</div>
                 <div class="cake-info">
                     <div class="cake-name">梦幻蝴蝶</div>
-                    <div class="cake-price">¥218 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('梦幻蝴蝶')">🎂 选择规格</button>
+                    <div class="cake-price">¥218起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('粉黛少女心')">
                 <div class="cake-image">💕</div>
                 <div class="cake-info">
                     <div class="cake-name">粉黛少女心</div>
-                    <div class="cake-price">¥248 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('粉黛少女心')">🎂 选择规格</button>
+                    <div class="cake-price">¥248起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('怦然心动')">
                 <div class="cake-image">🌺</div>
                 <div class="cake-info">
                     <div class="cake-name">怦然心动</div>
-                    <div class="cake-price">¥218 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('怦然心动')">🎂 选择规格</button>
+                    <div class="cake-price">¥218起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('草莓花束')">
                 <div class="cake-image">🍓</div>
                 <div class="cake-info">
                     <div class="cake-name">草莓花束</div>
-                    <div class="cake-price">¥218 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('草莓花束')">🎂 选择规格</button>
+                    <div class="cake-price">¥218起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('鲜花皇冠')">
                 <div class="cake-image">🌸</div>
                 <div class="cake-info">
                     <div class="cake-name">鲜花皇冠</div>
-                    <div class="cake-price">¥218 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('鲜花皇冠')">🎂 选择规格</button>
+                    <div class="cake-price">¥218起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('芭乐斑斓蛋糕')">
                 <div class="cake-image">🌈</div>
                 <div class="cake-info">
                     <div class="cake-name">芭乐斑斓蛋糕</div>
-                    <div class="cake-price">¥208 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('芭乐斑斓蛋糕')">🎂 选择规格</button>
+                    <div class="cake-price">¥208起</div>
                 </div>
             </div>
         </div>
@@ -907,68 +866,60 @@
     <section id="fondant" class="section" style="background: var(--white);">
         <h2 class="section-title">🎁 翻糖蛋糕</h2>
         <div class="cake-grid">
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('八方来财')">
                 <div class="cake-image">💰</div>
                 <div class="cake-info">
                     <div class="cake-name"><span class="badge">预售</span>八方来财</div>
-                    <div class="cake-price">¥248 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('八方来财')">🎂 选择规格</button>
+                    <div class="cake-price">¥248起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('大富大贵')">
                 <div class="cake-image">🎊</div>
                 <div class="cake-info">
                     <div class="cake-name"><span class="badge">预售</span>大富大贵</div>
-                    <div class="cake-price">¥288 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('大富大贵')">🎂 选择规格</button>
+                    <div class="cake-price">¥288起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('未来可期')">
                 <div class="cake-image">🌟</div>
                 <div class="cake-info">
                     <div class="cake-name"><span class="badge">预售</span>未来可期</div>
-                    <div class="cake-price">¥258 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('未来可期')">🎂 选择规格</button>
+                    <div class="cake-price">¥258起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('许愿池')">
                 <div class="cake-image">⛲</div>
                 <div class="cake-info">
                     <div class="cake-name">许愿池</div>
-                    <div class="cake-price">¥258 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('许愿池')">🎂 选择规格</button>
+                    <div class="cake-price">¥258起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('烟酒不分家')">
                 <div class="cake-image">🥃</div>
                 <div class="cake-info">
                     <div class="cake-name"><span class="badge">预售</span>烟酒不分家</div>
-                    <div class="cake-price">¥258 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('烟酒不分家')">🎂 选择规格</button>
+                    <div class="cake-price">¥258起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('杠上开花')">
                 <div class="cake-image">🎲</div>
                 <div class="cake-info">
                     <div class="cake-name">杠上开花</div>
-                    <div class="cake-price">¥268 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('杠上开花')">🎂 选择规格</button>
+                    <div class="cake-price">¥268起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('栗子蒙布朗挞')">
                 <div class="cake-image">🍰</div>
                 <div class="cake-info">
                     <div class="cake-name">栗子蒙布朗挞</div>
-                    <div class="cake-price">¥228 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('栗子蒙布朗挞')">🎂 选择规格</button>
+                    <div class="cake-price">¥228起</div>
                 </div>
             </div>
-            <div class="cake-card">
+            <div class="cake-card" onclick="openModal('抹茶慕斯切件礼盒')">
                 <div class="cake-image">🍰</div>
                 <div class="cake-info">
                     <div class="cake-name">抹茶慕斯切件礼盒</div>
-                    <div class="cake-price">¥158 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
-                    <button class="select-btn" onclick="openModal('抹茶慕斯切件礼盒')">🎂 选择规格</button>
+                    <div class="cake-price">¥158起</div>
                 </div>
             </div>
         </div>
