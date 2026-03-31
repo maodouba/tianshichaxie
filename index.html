@@ -361,7 +361,7 @@
         }
 
         .carousel-card {
-            min-width: calc(100vw - 6rem);
+            min-width: 100%;
             max-width: 500px;
             margin: 0 auto;
             background: var(--white);
@@ -532,16 +532,16 @@
         <div class="carousel-wrapper">
             <button class="carousel-arrow prev" onclick="moveCarousel(-1)">‹</button>
             <div class="carousel-track" id="carouselTrack">
-                <div class="carousel-card" onclick="location.href='product.html?name=十个勤天''>
+                <div class="carousel-card" onclick="location.href='product.html?name=十个勤天'">
                     <div class="cake-image"><img src="images/shigeqinshiti-1.png" style="width:100%;height:100%;object-fit:cover;" alt="十个勤天"></div>
                 </div>
-                <div class="carousel-card" onclick="location.href='product.html?name=杨枝甘露蛋糕''>
+                <div class="carousel-card" onclick="location.href='product.html?name=杨枝甘露蛋糕'">
                     <div class="cake-image">🥭</div>
                 </div>
-                <div class="carousel-card" onclick="location.href='product.html?name=开心果树莓慕斯蛋糕''>
+                <div class="carousel-card" onclick="location.href='product.html?name=开心果树莓慕斯蛋糕'">
                     <div class="cake-image"><img src="images/kaixin-shu-mei-1.jpg" style="width:100%;height:100%;object-fit:cover;" alt="开心果树莓慕斯蛋糕"></div>
                 </div>
-                <div class="carousel-card" onclick="location.href='product.html?name=覆盆子慕斯''>
+                <div class="carousel-card" onclick="location.href='product.html?name=覆盆子慕斯'">
                     <div class="cake-image">🍇</div>
                 </div>
             </div>
@@ -1068,8 +1068,7 @@
         const cakeData = {
             // 生日蛋糕
             '杨枝甘露蛋糕': { basePrice: 238 },
-            '十个勤天': { basePrice: 248, image: 'shigeqinshiti' },
-            '开心果树莓慕斯蛋糕': { basePrice: 268, sizePrices: [268, 298, 458, 598], image: 'kaixin-shu-mei' },
+            '开心果树莓慕斯蛋糕': { basePrice: 268, sizePrices: [268, 298, 458, 598] },
             '杨梅和西瓜': { basePrice: 238 },
             '抹茶柚子生日蛋糕': { basePrice: 238 },
             '抹茶慕斯': { basePrice: 238 },
@@ -1227,10 +1226,7 @@
         const dotsContainer = document.getElementById('carouselDots');
 
         function initCarousel() {
-            const cardWidth = document.querySelector('.carousel-card').offsetWidth;
             const totalCards = carouselCards.length;
-            const maxIndex = Math.max(0, totalCards - 1);
-
             // 创建点
             dotsContainer.innerHTML = '';
             for (let i = 0; i < totalCards; i++) {
@@ -1244,7 +1240,7 @@
         }
 
         function goToSlide(index) {
-            const cardWidth = document.querySelector('.carousel-card').offsetWidth + 24; // gap
+            const cardWidth = document.querySelector('.carousel-card').offsetWidth + 24;
             const totalCards = carouselCards.length;
             const maxIndex = totalCards - 1;
             carouselIndex = Math.max(0, Math.min(index, maxIndex));
