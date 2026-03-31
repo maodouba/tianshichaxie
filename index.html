@@ -367,11 +367,12 @@
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(104, 64, 41, 0.1);
             flex-shrink: 0;
+            cursor: pointer;
         }
 
         .carousel-card .cake-image {
             width: 100%;
-            height: 220px;
+            height: 280px;
             background: var(--secondary);
             display: flex;
             align-items: center;
@@ -380,20 +381,8 @@
         }
 
         .carousel-card .cake-info {
-            padding: 1.2rem;
-        }
-
-        .carousel-card .cake-name {
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-bottom: 0.3rem;
-        }
-
-        .carousel-card .cake-price {
-            font-size: 1.2rem;
-            color: var(--accent);
-            font-weight: bold;
-            margin-bottom: 0.5rem;
+            padding: 0;
+            display: none;
         }
 
         .carousel-arrow {
@@ -543,31 +532,15 @@
             <div class="carousel-track" id="carouselTrack">
                 <div class="carousel-card" onclick="openModal('十个勤天')">
                     <div class="cake-image"><img src="images/shigeqinshiti-1.png" style="width:100%;height:100%;object-fit:cover;" alt="十个勤天"></div>
-                    <div class="cake-info">
-                        <div class="cake-name"><span class="carousel-badge">爆款</span>十个勤天</div>
-                        <div class="cake-price">¥248起</div>
-                    </div>
                 </div>
                 <div class="carousel-card" onclick="openModal('杨枝甘露蛋糕')">
                     <div class="cake-image">🥭</div>
-                    <div class="cake-info">
-                        <div class="cake-name"><span class="carousel-badge">应季</span>杨枝甘露蛋糕</div>
-                        <div class="cake-price">¥238起</div>
-                    </div>
                 </div>
                 <div class="carousel-card" onclick="openModal('开心果树莓慕斯蛋糕')">
                     <div class="cake-image"><img src="images/kaixin-shu-mei-1.jpg" style="width:100%;height:100%;object-fit:cover;" alt="开心果树莓慕斯蛋糕"></div>
-                    <div class="cake-info">
-                        <div class="cake-name"><span class="carousel-badge">新品</span>开心果树莓慕斯蛋糕</div>
-                        <div class="cake-price">¥268起</div>
-                    </div>
                 </div>
                 <div class="carousel-card" onclick="openModal('覆盆子慕斯')">
                     <div class="cake-image">🍇</div>
-                    <div class="cake-info">
-                        <div class="cake-name"><span class="carousel-badge">应季</span>覆盆子慕斯</div>
-                        <div class="cake-price">¥298起</div>
-                    </div>
                 </div>
             </div>
             <button class="carousel-arrow next" onclick="moveCarousel(1)">›</button>
