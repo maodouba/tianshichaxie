@@ -1063,25 +1063,25 @@
             </div>
 
             <div class="modal-section">
-                <div class="modal-section-title">🍰 蛋糕夹心</div>
+                <div class="modal-section-title">🍰 茶心一</div>
                 <div class="option-grid" id="fillingOptions"></div>
             </div>
 
             <div class="modal-section">
-                <div class="modal-section-title">🍓 水果夹心</div>
+                <div class="modal-section-title">🍓 夹心二</div>
                 <div class="option-grid" id="fruitOptions"></div>
             </div>
 
             <div class="modal-price" id="modalPrice"></div>
             <button class="modal-confirm" onclick="confirmSelection()">立即定制</button>
-            <p class="modal-note">* 可自由搭配规格，梅陇蜜瓜需额外+10元，客服将尽快与您联系确认</p>
+            <p class="modal-note">* 可自由搭配规格，红颜草莓+10元、开心果奶油+15元，客服将尽快与您联系确认</p>
         </div>
     </div>
 
     <script>
         // 规格数据
-        const fillings = ['大白兔奶冻', '红茶冻', '椰子奶冻', '薄脆巧克力脆珠', '海盐奥利奥'];
-        const fruits = ['哈密瓜', '芒果', '蓝莓', '梅陇蜜瓜(+10)', '菠萝', '青提'];
+        const fillings = ['大白兔奶冻', '红茶奶冻', '香芋', '薄脆巧克力脆珠', '海盐奥利奥', '开心果奶油(+15)'];
+        const fruits = ['哈密瓜', '芒果', '蓝莓', '红颜草莓(+10)', '红心芭乐', '香印青提', '红心火龙果'];
 
         const cakeData = {
             // 生日蛋糕
@@ -1207,8 +1207,10 @@
             if (selectedSize && selectedSize.includes('6寸')) price += 30;
             if (selectedSize && selectedSize.includes('8寸')) price += 80;
             if (selectedSize && selectedSize.includes('10寸')) price += 150;
-            // 梅陇蜜瓜加价
-            if (selectedFruit && selectedFruit.includes('梅陇蜜瓜')) price += 10;
+            // 红颜草莓加价
+            if (selectedFruit && selectedFruit.includes('红颜草莓')) price += 10;
+            // 开心果奶油加价
+            if (selectedFilling && selectedFilling.includes('开心果奶油')) price += 15;
             document.getElementById('modalPrice').textContent = `¥${price}`;
         }
 
