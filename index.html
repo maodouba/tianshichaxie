@@ -114,6 +114,8 @@
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(104, 64, 41, 0.1);
             transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .cake-card:hover {
@@ -132,6 +134,9 @@
 
         .cake-info {
             padding: 1.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .cake-name {
@@ -145,6 +150,24 @@
             font-size: 1.2rem;
             color: var(--accent);
             font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .select-btn {
+            margin-top: auto;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .select-btn:hover {
+            background: var(--accent);
         }
 
         .badge {
@@ -163,6 +186,133 @@
 
         .badge-hot {
             background: #FF6B6B;
+        }
+
+        /* 规格选择弹窗 */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 480px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .modal-close:hover {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .modal-cake-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            padding-right: 2rem;
+        }
+
+        .modal-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-section-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            color: var(--text);
+        }
+
+        .option-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+        }
+
+        .option-btn {
+            padding: 0.6rem 0.5rem;
+            border: 2px solid #e0d6d0;
+            border-radius: 8px;
+            background: var(--white);
+            cursor: pointer;
+            font-size: 0.85rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .option-btn:hover {
+            border-color: var(--accent);
+        }
+
+        .option-btn.selected {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .modal-price {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: bold;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .modal-confirm {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .modal-confirm:hover {
+            background: var(--accent);
+        }
+
+        .modal-note {
+            font-size: 0.8rem;
+            color: #999;
+            text-align: center;
+            margin-top: 0.8rem;
         }
 
         /* 联系我们 */
@@ -311,105 +461,120 @@
                 <div class="cake-image">🥭</div>
                 <div class="cake-info">
                     <div class="cake-name">杨枝甘露蛋糕</div>
-                    <div class="cake-price">¥238</div>
+                    <div class="cake-price">¥238 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
+                    <button class="select-btn" onclick="openModal('杨枝甘露蛋糕')">🎂 选择规格</button>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🍉</div>
                 <div class="cake-info">
                     <div class="cake-name">杨梅和西瓜</div>
-                    <div class="cake-price">¥238</div>
+                    <div class="cake-price">¥238 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
+                    <button class="select-btn" onclick="openModal('杨梅和西瓜')">🎂 选择规格</button>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🍵</div>
                 <div class="cake-info">
                     <div class="cake-name">抹茶柚子生日蛋糕</div>
-                    <div class="cake-price">¥238</div>
+                    <div class="cake-price">¥238 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
+                    <button class="select-btn" onclick="openModal('抹茶柚子生日蛋糕')">🎂 选择规格</button>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🍵</div>
                 <div class="cake-info">
                     <div class="cake-name">抹茶慕斯</div>
-                    <div class="cake-price">¥238起</div>
+                    <div class="cake-price">¥238 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
+                    <button class="select-btn" onclick="openModal('抹茶慕斯')">🎂 选择规格</button>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🥛</div>
                 <div class="cake-info">
                     <div class="cake-name">酸奶慕斯</div>
-                    <div class="cake-price">¥298</div>
+                    <div class="cake-price">¥298 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
+                    <button class="select-btn" onclick="openModal('酸奶慕斯')">🎂 选择规格</button>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🍍</div>
                 <div class="cake-info">
                     <div class="cake-name">椰香凤梨蛋糕</div>
-                    <div class="cake-price">¥218</div>
+                    <div class="cake-price">¥218 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
+                    <button class="select-btn" onclick="openModal('椰香凤梨蛋糕')">🎂 选择规格</button>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🍓</div>
                 <div class="cake-info">
                     <div class="cake-name">草莓断层蛋糕</div>
-                    <div class="cake-price">¥188</div>
+                    <div class="cake-price">¥188 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
+                    <button class="select-btn" onclick="openModal('草莓断层蛋糕')">🎂 选择规格</button>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🥭</div>
                 <div class="cake-info">
                     <div class="cake-name">芒果奶冻卷</div>
-                    <div class="cake-price">¥128</div>
+                    <div class="cake-price">¥128 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
+                    <button class="select-btn" onclick="openModal('芒果奶冻卷')">🎂 选择规格</button>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🍵</div>
                 <div class="cake-info">
                     <div class="cake-name">伯爵红茶蛋糕卷</div>
-                    <div class="cake-price">¥88</div>
+                    <div class="cake-price">¥88 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
+                    <button class="select-btn" onclick="openModal('伯爵红茶蛋糕卷')">🎂 选择规格</button>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🍰</div>
                 <div class="cake-info">
                     <div class="cake-name">日式瑞士卷</div>
-                    <div class="cake-price">¥88</div>
+                    <div class="cake-price">¥88 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
+                    <button class="select-btn" onclick="openModal('日式瑞士卷')">🎂 选择规格</button>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🍰</div>
                 <div class="cake-info">
                     <div class="cake-name">断层蛋糕</div>
-                    <div class="cake-price">¥188</div>
+                    <div class="cake-price">¥188 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
+                    <button class="select-btn" onclick="openModal('断层蛋糕')">🎂 选择规格</button>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🍓</div>
                 <div class="cake-info">
                     <div class="cake-name">鲜果蛋糕</div>
-                    <div class="cake-price">¥188</div>
+                    <div class="cake-price">¥188 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
+                    <button class="select-btn" onclick="openModal('鲜果蛋糕')">🎂 选择规格</button>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🍑</div>
                 <div class="cake-info">
                     <div class="cake-name">夏日芒芒</div>
-                    <div class="cake-price">¥188</div>
+                    <div class="cake-price">¥188 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
+                    <button class="select-btn" onclick="openModal('夏日芒芒')">🎂 选择规格</button>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🍇</div>
                 <div class="cake-info">
                     <div class="cake-name">覆盆子慕斯</div>
-                    <div class="cake-price">¥298</div>
+                    <div class="cake-price">¥298 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
+                    <button class="select-btn" onclick="openModal('覆盆子慕斯')">🎂 选择规格</button>
                 </div>
             </div>
             <div class="cake-card">
                 <div class="cake-image">🍋</div>
                 <div class="cake-info">
                     <div class="cake-name">柠檬酸奶芝士蛋糕</div>
-                    <div class="cake-price">¥148</div>
+                    <div class="cake-price">¥148 <span style="font-size:0.75rem;color:#999;font-weight:normal;">起</span></div>
+                    <button class="select-btn" onclick="openModal('柠檬酸奶芝士蛋糕')">🎂 选择规格</button>
                 </div>
             </div>
         </div>
@@ -785,6 +950,139 @@
             </div>
         </div>
     </section>
+
+    <!-- 生日蛋糕弹窗 -->
+    <div class="modal-overlay" id="cakeModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div class="modal-cake-name" id="modalCakeName"></div>
+
+            <div class="modal-section">
+                <div class="modal-section-title">🎂 尺寸</div>
+                <div class="option-grid" id="sizeOptions"></div>
+            </div>
+
+            <div class="modal-section">
+                <div class="modal-section-title">🍰 蛋糕夹心</div>
+                <div class="option-grid" id="fillingOptions"></div>
+            </div>
+
+            <div class="modal-section">
+                <div class="modal-section-title">🍓 水果夹心</div>
+                <div class="option-grid" id="fruitOptions"></div>
+            </div>
+
+            <div class="modal-price" id="modalPrice"></div>
+            <button class="modal-confirm" onclick="confirmSelection()">立即定制</button>
+            <p class="modal-note">* 可自由搭配规格，梅陇蜜瓜需额外+10元，客服将尽快与您联系确认</p>
+        </div>
+    </div>
+
+    <script>
+        // 规格数据
+        const fillings = ['大白兔奶冻', '红茶冻', '椰子奶冻', '薄脆巧克力脆珠', '海盐奥利奥'];
+        const fruits = ['哈密瓜', '芒果', '蓝莓', '梅陇蜜瓜(+10)', '菠萝', '青提'];
+
+        const cakeData = {
+            '杨枝甘露蛋糕': { basePrice: 238, sizes: ['6寸 / 2-3人', '8寸 / 4-6人', '10寸 / 8-10人'], fillings: fillings, fruits: fruits },
+            '杨梅和西瓜': { basePrice: 238, sizes: ['6寸 / 2-3人', '8寸 / 4-6人', '10寸 / 8-10人'], fillings: fillings, fruits: fruits },
+            '抹茶柚子生日蛋糕': { basePrice: 238, sizes: ['6寸 / 2-3人', '8寸 / 4-6人', '10寸 / 8-10人'], fillings: fillings, fruits: fruits },
+            '抹茶慕斯': { basePrice: 238, sizes: ['6寸 / 2-3人', '8寸 / 4-6人', '10寸 / 8-10人'], fillings: fillings, fruits: fruits },
+            '酸奶慕斯': { basePrice: 298, sizes: ['6寸 / 2-3人', '8寸 / 4-6人', '10寸 / 8-10人'], fillings: fillings, fruits: fruits },
+            '椰香凤梨蛋糕': { basePrice: 218, sizes: ['6寸 / 2-3人', '8寸 / 4-6人', '10寸 / 8-10人'], fillings: fillings, fruits: fruits },
+            '草莓断层蛋糕': { basePrice: 188, sizes: ['6寸 / 2-3人', '8寸 / 4-6人', '10寸 / 8-10人'], fillings: fillings, fruits: fruits },
+            '芒果奶冻卷': { basePrice: 128, sizes: ['小卷 / 1-2人', '大卷 / 4-6人'], fillings: fillings, fruits: fruits },
+            '伯爵红茶蛋糕卷': { basePrice: 88, sizes: ['小卷 / 1-2人', '大卷 / 4-6人'], fillings: fillings, fruits: fruits },
+            '日式瑞士卷': { basePrice: 88, sizes: ['小卷 / 1-2人', '大卷 / 4-6人'], fillings: fillings, fruits: fruits },
+            '断层蛋糕': { basePrice: 188, sizes: ['6寸 / 2-3人', '8寸 / 4-6人', '10寸 / 8-10人'], fillings: fillings, fruits: fruits },
+            '鲜果蛋糕': { basePrice: 188, sizes: ['6寸 / 2-3人', '8寸 / 4-6人', '10寸 / 8-10人'], fillings: fillings, fruits: fruits },
+            '夏日芒芒': { basePrice: 188, sizes: ['6寸 / 2-3人', '8寸 / 4-6人', '10寸 / 8-10人'], fillings: fillings, fruits: fruits },
+            '覆盆子慕斯': { basePrice: 298, sizes: ['6寸 / 2-3人', '8寸 / 4-6人', '10寸 / 8-10人'], fillings: fillings, fruits: fruits },
+            '柠檬酸奶芝士蛋糕': { basePrice: 148, sizes: ['6寸 / 2-3人', '8寸 / 4-6人', '10寸 / 8-10人'], fillings: fillings, fruits: fruits },
+        };
+
+        let currentCake = null;
+        let selectedSize = null;
+        let selectedFilling = null;
+        let selectedFruit = null;
+
+        function openModal(cakeName) {
+            currentCake = cakeName;
+            const data = cakeData[cakeName];
+            if (!data) return;
+
+            document.getElementById('modalCakeName').textContent = cakeName;
+
+            // 渲染尺寸选项
+            const sizeContainer = document.getElementById('sizeOptions');
+            sizeContainer.innerHTML = data.sizes.map((s, i) => 
+                `<button class="option-btn ${i === 0 ? 'selected' : ''}" onclick="selectOption('size', this, ${i})">${s}</button>`
+            ).join('');
+
+            // 渲染夹心选项
+            const fillingContainer = document.getElementById('fillingOptions');
+            fillingContainer.innerHTML = data.fillings.map((f, i) => 
+                `<button class="option-btn ${i === 0 ? 'selected' : ''}" onclick="selectOption('filling', this, ${i})">${f}</button>`
+            ).join('');
+
+            // 渲染水果选项
+            const fruitContainer = document.getElementById('fruitOptions');
+            fruitContainer.innerHTML = data.fruits.map((f, i) => 
+                `<button class="option-btn ${i === 0 ? 'selected' : ''}" onclick="selectOption('fruit', this, ${i})">${f}</button>`
+            ).join('');
+
+            selectedSize = data.sizes[0];
+            selectedFilling = data.fillings[0];
+            selectedFruit = data.fruits[0];
+
+            updatePrice();
+            document.getElementById('cakeModal').classList.add('active');
+        }
+
+        function selectOption(type, el, index) {
+            const container = el.parentElement;
+            container.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
+            el.classList.add('selected');
+
+            if (type === 'size') {
+                selectedSize = cakeData[currentCake].sizes[index];
+            } else if (type === 'filling') {
+                selectedFilling = cakeData[currentCake].fillings[index];
+            } else if (type === 'fruit') {
+                selectedFruit = cakeData[currentCake].fruits[index];
+            }
+            updatePrice();
+        }
+
+        function updatePrice() {
+            const data = cakeData[currentCake];
+            if (!data) return;
+            let price = data.basePrice;
+            // 根据尺寸加价
+            if (selectedSize && selectedSize.includes('8寸')) price += 60;
+            if (selectedSize && selectedSize.includes('10寸')) price += 120;
+            // 梅陇蜜瓜加价
+            if (selectedFruit && selectedFruit.includes('梅陇蜜瓜')) price += 10;
+            document.getElementById('modalPrice').textContent = `¥${price}`;
+        }
+
+        function closeModal() {
+            document.getElementById('cakeModal').classList.remove('active');
+        }
+
+        function confirmSelection() {
+            const wechatUrl = 'https://u.wechat.com/EJ6X5T8kxJhZmH8Qfn-CL50';
+            const msg = `我想定制【${currentCake}】\n规格：${selectedSize}\n蛋糕夹心：${selectedFilling}\n水果夹心：${selectedFruit}`;
+            // 尝试打开微信客服
+            const telUrl = `tel:18033401160`;
+            window.location.href = wechatUrl;
+        }
+
+        // 点击遮罩关闭
+        document.getElementById('cakeModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
 
     <!-- 联系我们 -->
     <section id="contact" class="contact">
