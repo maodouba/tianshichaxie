@@ -446,7 +446,7 @@
             let slides = '';
             if (images.length > 0) {
                 images.forEach((img, i) => {
-                    slides += `<div class="gallery-slide"><img src="images/${img}" alt="${name}"></div>`;
+                    slides += `<div class="gallery-slide"><img src="https://cdn.jsdelivr.net/gh/maodouba/tianshichaxie@main/images/${img}" alt="${name}"></div>`;
                 });
             } else {
                 slides += `<div class="gallery-slide"><div class="emoji-placeholder">${emoji}</div></div>`;
@@ -553,7 +553,7 @@
             grid.innerHTML = others.map(([name, data]) => `
                 <a href="product.html?name=${encodeURIComponent(name)}" class="recommend-card">
                     ${data.images && data.images.length > 0
-                        ? `<img src="images/${data.images[0]}" alt="${name}">`
+                        ? `<img src="https://cdn.jsdelivr.net/gh/maodouba/tianshichaxie@main/images/${data.images[0]}" alt="${name}">`
                         : `<div style="height:150px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:#f5f0eb;">${data.emoji}</div>`
                     }
                     <div class="recommend-card-info">
