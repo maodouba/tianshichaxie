@@ -1093,7 +1093,7 @@
         const cakeData = {
             // 生日蛋糕
             '杨枝甘露蛋糕': { basePrice: 238 },
-            '开心果树莓慕斯蛋糕': { basePrice: 288 },
+            '开心果树莓慕斯蛋糕': { basePrice: 268, sizePrices: [268, 298, 458, 598] },
             '杨梅和西瓜': { basePrice: 238 },
             '抹茶柚子生日蛋糕': { basePrice: 238 },
             '抹茶慕斯': { basePrice: 238 },
@@ -1219,6 +1219,11 @@
             if (selectedFruit && selectedFruit.includes('红颜草莓')) price += 10;
             // 开心果奶油加价
             if (selectedFilling && selectedFilling.includes('开心果奶油')) price += 15;
+            // 使用固定价格（如果蛋糕有设置的话）
+            if (data.sizePrices) {
+                const sizeIndex = selectedSize.includes('5寸') ? 0 : selectedSize.includes('6寸') ? 1 : selectedSize.includes('8寸') ? 2 : 3;
+                price = data.sizePrices[sizeIndex] || price;
+            }
             document.getElementById('modalPrice').textContent = `¥${price}`;
         }
 
