@@ -348,36 +348,38 @@
 
         .carousel-wrapper {
             position: relative;
-            max-width: 1200px;
+            max-width: 600px;
             margin: 0 auto;
             padding: 0 3rem;
+            overflow: hidden;
         }
 
         .carousel-track {
             display: flex;
+            gap: 24px;
             transition: transform 0.5s ease;
         }
 
         .carousel-card {
-            min-width: 280px;
-            max-width: 280px;
-            margin-right: 1.5rem;
+            min-width: calc(100vw - 6rem);
+            max-width: 500px;
+            margin: 0 auto;
             background: var(--white);
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(104, 64, 41, 0.1);
+            box-shadow: 0 8px 30px rgba(104, 64, 41, 0.15);
             flex-shrink: 0;
             cursor: pointer;
         }
 
         .carousel-card .cake-image {
             width: 100%;
-            height: 280px;
+            height: 400px;
             background: var(--secondary);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            font-size: 6rem;
         }
 
         .carousel-card .cake-info {
@@ -1225,14 +1227,13 @@
         const dotsContainer = document.getElementById('carouselDots');
 
         function initCarousel() {
-            const cardWidth = 280 + 24; // card width + gap
-            const visibleCards = 4;
+            const cardWidth = document.querySelector('.carousel-card').offsetWidth;
             const totalCards = carouselCards.length;
-            const maxIndex = Math.max(0, totalCards - visibleCards);
+            const maxIndex = Math.max(0, totalCards - 1);
 
             // 创建点
             dotsContainer.innerHTML = '';
-            for (let i = 0; i <= maxIndex; i++) {
+            for (let i = 0; i < totalCards; i++) {
                 const dot = document.createElement('button');
                 dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
                 dot.onclick = () => goToSlide(i);
@@ -1243,10 +1244,9 @@
         }
 
         function goToSlide(index) {
-            const cardWidth = 304; // 280 + 24 gap
-            const visibleCards = Math.floor(document.querySelector('.carousel-wrapper').offsetWidth / 304) || 4;
+            const cardWidth = document.querySelector('.carousel-card').offsetWidth + 24; // gap
             const totalCards = carouselCards.length;
-            const maxIndex = Math.max(0, totalCards - visibleCards);
+            const maxIndex = totalCards - 1;
             carouselIndex = Math.max(0, Math.min(index, maxIndex));
             track.style.transform = `translateX(-${carouselIndex * cardWidth}px)`;
             updateDots();
